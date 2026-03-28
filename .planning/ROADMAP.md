@@ -131,18 +131,18 @@ Plans:
 - [x] 07-02-PLAN.md — Download button integration (DownloadReportButton, CalculatorApp input state, ResultsView wiring, lazy loading)
 
 ### Phase 8: GDPR Compliance & Privacy Infrastructure
-**Goal**: GDPR-compliant consent mechanism, privacy policy, and cookieless analytics in place before any email is captured — this is a prerequisite for lead capture, not an afterthought.
+**Goal**: GDPR-compliant consent mechanism, privacy policy, and privacy infrastructure in place before any email is captured — this is a prerequisite for lead capture, not an afterthought.
 **Depends on**: Phase 7
 **Requirements**: LEAD-02, UX-03
 **UI hint**: yes
 **Success Criteria** (what must be TRUE):
   1. GDPR consent checkbox (unchecked by default) exists and blocks submission when unchecked
   2. Privacy policy link is visible and accessible from the consent UI
-  3. Plausible Analytics is integrated with no cookie banner required
-**Plans**: TBD
+  3. No cookie-based analytics introduced (analytics tool selection deferred per D-06)
+**Plans**: 1 plan
 
 Plans:
-- [ ] 08-01: GDPR consent components, privacy policy page, and Plausible Analytics integration
+- [ ] 08-01-PLAN.md — Privacy policy page, GDPR consent checkbox component, and site footer with privacy link
 
 ### Phase 9: Email Capture & Delivery
 **Goal**: Email-gated PDF download flow — modal captures email with GDPR consent, triggers PDF download, and sends a branded results summary email via serverless function.
