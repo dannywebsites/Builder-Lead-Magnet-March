@@ -4,6 +4,7 @@ import { useCallback } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useQueryState, parseAsInteger } from "nuqs";
 
+import type { CalculatorOutput, Currency } from "@/lib/calculator/types";
 import { STEP_SCHEMAS, type FormValues } from "@/lib/form/step-schemas";
 import { FORM_DEFAULTS } from "@/lib/form/form-defaults";
 import { transformToCalculatorInput } from "@/lib/form/transform";
@@ -14,7 +15,15 @@ import { StepFinancials } from "./steps/StepFinancials";
 import { StepStaff } from "./steps/StepStaff";
 import { StepJobPricing } from "./steps/StepJobPricing";
 
-export default function WizardForm() {
+interface WizardFormProps {
+	onCalculated: (
+		output: CalculatorOutput,
+		currency: Currency,
+		staffCount: number,
+	) => void;
+}
+
+export default function WizardForm({ onCalculated }: WizardFormProps) {
 	const [step, setStep] = useQueryState(
 		"step",
 		parseAsInteger.withDefault(0),
@@ -43,7 +52,6 @@ export default function WizardForm() {
 	}, [step, setStep]);
 
 	const handleCalculate = useCallback(async () => {
-		// Validate current step fields
 		const schema = STEP_SCHEMAS[3];
 		const fieldNames = Object.keys(schema.shape) as Array<keyof FormValues>;
 		const valid = await methods.trigger(fieldNames);
@@ -52,9 +60,8 @@ export default function WizardForm() {
 		const data = methods.getValues();
 		const input = transformToCalculatorInput(data);
 		const result = calculate(input);
-		console.log("Calculation result:", result);
-		alert(`Monthly Revenue Target: ${result.monthlyRevenueTarget}`);
-	}, [methods]);
+		onCalculated(result, data.currency as Currency, Number(data.staffCount));
+	}, [methods, onCalculated]);
 
 	return (
 		<div className="max-w-2xl mx-auto px-4 py-12">

@@ -1,12 +1,9 @@
-import { Suspense } from "react";
-import WizardForm from "@/components/wizard/WizardForm";
+import { CalculatorApp } from "@/components/CalculatorApp";
 
 export default function Home() {
 	return (
 		<main>
-			<Suspense>
-				<WizardForm />
-			</Suspense>
+			<CalculatorApp />
 		</main>
 	);
 }
