@@ -61,11 +61,11 @@ Plans:
   2. Each step validates inputs before allowing progression (direct cost % capped at 80%)
   3. All 8 input fields are present and functional across wizard steps
   4. Form state persists across steps (back/forward navigation does not lose data)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: Wizard shell with step navigation, progress indicator, and route state
-- [ ] 03-02: Input fields with react-hook-form + Zod per-step validation
+- [ ] 03-01-PLAN.md — Wizard infrastructure: dependencies, per-step schemas, transform layer, reusable UI components, progress stepper, and wizard shell
+- [ ] 03-02-PLAN.md — Step components with all input fields, zero-staff disable, engine wiring, and human verification
 
 ### Phase 4: Contextual Copy & Input Guidance
 **Goal**: Every input field displays a plain-English explanation and contextual asterisk notes (tax disclaimers, buffer explanations) so tradespeople understand exactly what they are entering and why.
