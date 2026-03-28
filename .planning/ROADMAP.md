@@ -127,7 +127,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — PDF component tree (@react-pdf/renderer install, branded layout, all sections, generation function, tests)
+- [x] 07-01-PLAN.md — PDF component tree (@react-pdf/renderer install, branded layout, all sections, generation function, tests)
 - [ ] 07-02-PLAN.md — Download button integration (DownloadReportButton, CalculatorApp input state, ResultsView wiring, lazy loading)
 
 ### Phase 8: GDPR Compliance & Privacy Infrastructure
@@ -187,7 +187,7 @@ Plans:
 | 4. Contextual Copy & Input Guidance | 1/2 | In Progress|  |
 | 5. Results Display | 0/2 | Not started | - |
 | 6. Legal Alerts | 0/1 | Not started | - |
-| 7. PDF Report Generation | 0/2 | Not started | - |
+| 7. PDF Report Generation | 1/2 | In Progress|  |
 | 8. GDPR Compliance & Privacy Infrastructure | 0/1 | Not started | - |
 | 9. Email Capture & Delivery | 0/2 | Not started | - |
 | 10. UX Polish, Performance & Launch Prep | 0/3 | Not started | - |
