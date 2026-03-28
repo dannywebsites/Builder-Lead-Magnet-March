@@ -7,6 +7,7 @@ import type {
 	Currency,
 } from "@/lib/calculator/types";
 import type { Alert } from "@/lib/calculator/alerts";
+import { EmailCaptureModal } from "@/components/email/EmailCaptureModal";
 
 interface DownloadReportButtonProps {
 	input: CalculatorInput;
@@ -21,30 +22,25 @@ export function DownloadReportButton({
 	currency,
 	alerts,
 }: DownloadReportButtonProps) {
-	const [isGenerating, setIsGenerating] = useState(false);
-
-	async function handleDownload() {
-		setIsGenerating(true);
-		try {
-			const { generateAndDownloadReport } = await import(
-				"@/lib/pdf/generate-report"
-			);
-			await generateAndDownloadReport(input, output, currency, alerts);
-		} catch (error) {
-			console.error("PDF generation failed:", error);
-		} finally {
-			setIsGenerating(false);
-		}
-	}
+	const [showModal, setShowModal] = useState(false);
 
 	return (
-		<button
-			type="button"
-			onClick={handleDownload}
-			disabled={isGenerating}
-			className="w-full sm:w-auto px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-		>
-			{isGenerating ? "Generating Report..." : "Get Your Trade Survival Report"}
-		</button>
+		<>
+			<button
+				type="button"
+				onClick={() => setShowModal(true)}
+				className="w-full sm:w-auto px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+			>
+				Get Your Trade Survival Report
+			</button>
+			<EmailCaptureModal
+				isOpen={showModal}
+				onClose={() => setShowModal(false)}
+				input={input}
+				output={output}
+				currency={currency}
+				alerts={alerts}
+			/>
+		</>
 	);
 }

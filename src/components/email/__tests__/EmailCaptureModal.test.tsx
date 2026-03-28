@@ -60,7 +60,7 @@ describe("EmailCaptureModal", () => {
 	it("renders email input and consent checkbox when open", () => {
 		render(<EmailCaptureModal {...defaultProps} />);
 		expect(screen.getByRole("dialog")).toBeInTheDocument();
-		expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+		expect(screen.getByLabelText(/email address/i)).toBeInTheDocument();
 	});
 
 	it("returns null when isOpen is false", () => {
