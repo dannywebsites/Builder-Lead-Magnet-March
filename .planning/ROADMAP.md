@@ -64,7 +64,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Wizard infrastructure: dependencies, per-step schemas, transform layer, reusable UI components, progress stepper, and wizard shell
+- [x] 03-01-PLAN.md — Wizard infrastructure: dependencies, per-step schemas, transform layer, reusable UI components, progress stepper, and wizard shell
 - [ ] 03-02-PLAN.md — Step components with all input fields, zero-staff disable, engine wiring, and human verification
 
 ### Phase 4: Contextual Copy & Input Guidance
@@ -182,7 +182,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Project Scaffolding & Type Foundation | 0/2 | Not started | - |
 | 2. Calculation Engine | 0/2 | Not started | - |
-| 3. Multi-Step Input Form | 0/2 | Not started | - |
+| 3. Multi-Step Input Form | 1/2 | In Progress|  |
 | 4. Contextual Copy & Input Guidance | 0/1 | Not started | - |
 | 5. Results Display | 0/2 | Not started | - |
 | 6. Legal Alerts | 0/1 | Not started | - |
