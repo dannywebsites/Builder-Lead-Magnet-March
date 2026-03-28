@@ -65,7 +65,7 @@ Plans:
 
 Plans:
 - [x] 03-01-PLAN.md — Wizard infrastructure: dependencies, per-step schemas, transform layer, reusable UI components, progress stepper, and wizard shell
-- [ ] 03-02-PLAN.md — Step components with all input fields, zero-staff disable, engine wiring, and human verification
+- [x] 03-02-PLAN.md — Step components with all input fields, zero-staff disable, engine wiring, and human verification
 
 ### Phase 4: Contextual Copy & Input Guidance
 **Goal**: Every input field displays a plain-English explanation and contextual asterisk notes (tax disclaimers, buffer explanations) so tradespeople understand exactly what they are entering and why.
