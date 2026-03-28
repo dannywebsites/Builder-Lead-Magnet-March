@@ -18,8 +18,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **FORM-07**: User can enter Average Job Value (net/excluding VAT, based on recent history)
 - [ ] **FORM-08**: User can enter Direct Cost Percentage (materials, fuel, disposal — hard-capped at 80%)
 - [x] **FORM-09**: User can select VAT Rate (20% UK / 13.5% IE / 23% IE / 0% Exempt)
-- [ ] **FORM-10**: Every input field displays a plain-English note explaining what it means and why it matters
-- [ ] **FORM-11**: Every input field displays contextual asterisk notes where applicable (tax disclaimers, buffer explanations)
+- [x] **FORM-10**: Every input field displays a plain-English note explaining what it means and why it matters
+- [x] **FORM-11**: Every input field displays contextual asterisk notes where applicable (tax disclaimers, buffer explanations)
 - [x] **FORM-12**: Form validates all inputs with helpful error messages before calculation
 - [x] **FORM-13**: Multi-step wizard layout with progress indicator
 
@@ -128,8 +128,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FORM-07 | Phase 3: Multi-Step Input Form | Pending |
 | FORM-08 | Phase 3: Multi-Step Input Form | Pending |
 | FORM-09 | Phase 1: Project Scaffolding & Type Foundation | Complete |
-| FORM-10 | Phase 4: Contextual Copy & Input Guidance | Pending |
-| FORM-11 | Phase 4: Contextual Copy & Input Guidance | Pending |
+| FORM-10 | Phase 4: Contextual Copy & Input Guidance | Complete |
+| FORM-11 | Phase 4: Contextual Copy & Input Guidance | Complete |
 | FORM-12 | Phase 3: Multi-Step Input Form | Complete |
 | FORM-13 | Phase 3: Multi-Step Input Form | Complete |
 | CALC-01 | Phase 2: Calculation Engine | Complete |

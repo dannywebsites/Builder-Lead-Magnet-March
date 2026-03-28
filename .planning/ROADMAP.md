@@ -79,7 +79,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — UI component extensions (explanation/disclaimer props), field copy constants, and copy wiring for 3 step components
+- [x] 04-01-PLAN.md — UI component extensions (explanation/disclaimer props), field copy constants, and copy wiring for 3 step components
 - [ ] 04-02-PLAN.md — Itemized fixed costs breakdown (8 categories with running total), StepFinancials rewrite, and human verification
 
 ### Phase 5: Results Display
@@ -184,7 +184,7 @@ Plans:
 | 1. Project Scaffolding & Type Foundation | 0/2 | Not started | - |
 | 2. Calculation Engine | 0/2 | Not started | - |
 | 3. Multi-Step Input Form | 1/2 | In Progress|  |
-| 4. Contextual Copy & Input Guidance | 0/2 | Not started | - |
+| 4. Contextual Copy & Input Guidance | 1/2 | In Progress|  |
 | 5. Results Display | 0/2 | Not started | - |
 | 6. Legal Alerts | 0/1 | Not started | - |
 | 7. PDF Report Generation | 0/2 | Not started | - |
