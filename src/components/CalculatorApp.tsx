@@ -3,6 +3,7 @@
 import { useState, Suspense } from "react";
 import type { CalculatorOutput, Currency } from "@/lib/calculator/types";
 import WizardForm from "@/components/wizard/WizardForm";
+import { ResultsView } from "@/components/results/ResultsView";
 
 interface ResultsState {
 	output: CalculatorOutput;
@@ -24,21 +25,12 @@ export function CalculatorApp() {
 				/>
 			</div>
 			{results && (
-				<div className="max-w-2xl mx-auto px-4 py-12">
-					<h2 className="text-2xl font-bold text-center mb-8">
-						Your Numbers
-					</h2>
-					<pre className="bg-gray-100 p-4 rounded text-sm overflow-auto">
-						{JSON.stringify(results.output, null, 2)}
-					</pre>
-					<button
-						type="button"
-						onClick={() => setResults(null)}
-						className="mt-6 px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] text-gray-600 hover:text-foreground border border-gray-300"
-					>
-						Edit Your Numbers
-					</button>
-				</div>
+				<ResultsView
+					output={results.output}
+					currency={results.currency}
+					staffCount={results.staffCount}
+					onEdit={() => setResults(null)}
+				/>
 			)}
 		</Suspense>
 	);
