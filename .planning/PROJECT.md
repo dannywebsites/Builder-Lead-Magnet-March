@@ -15,17 +15,17 @@ The tradesperson enters what they need to take home, and the app tells them the 
 - [x] Project scaffolding: Next.js 15, TypeScript strict, Tailwind 4, Biome, Vitest — Validated in Phase 1: Project Scaffolding & Type Foundation
 - [x] Zod validation schemas for all calculator inputs (entity type, VAT rates) — Validated in Phase 1
 - [x] Currency formatting (GBP + EUR) and rounding utilities — Validated in Phase 1
+- [x] Tax buffer calculation (Corp Tax for Ltd, pass-through for Sole Trader) — Validated in Phase 2: Calculation Engine
+- [x] True cost of staff calculation (30% employer burden markup on base payroll) — Validated in Phase 2
+- [x] 75% billable hours reality check (hard-capped, not overridable) — Validated in Phase 2
+- [x] 15% material slippage factor on direct costs — Validated in Phase 2
+- [x] Minimum Revenue Target (MRT) calculation combining all adjusted costs — Validated in Phase 2
+- [x] Sales pipeline output: Jobs to Win, Quotes Needed (30% win rate), Leads Needed (30% conversion) — Validated in Phase 2
 
 ### Active
 
 - [ ] Multi-step input form capturing: entity type, gross personal draw, fixed overheads, staff details, average job value, direct cost %, and VAT rate
-- [ ] Tax buffer calculation (Corp Tax for Ltd, pass-through for Sole Trader)
-- [ ] True cost of staff calculation (30% employer burden markup on base payroll)
-- [ ] 75% billable hours reality check (hard-capped, not overridable)
-- [ ] 15% material slippage factor on direct costs
-- [ ] Minimum Revenue Target (MRT) calculation combining all adjusted costs
 - [ ] Output report: Monthly Revenue Goal (Net), Monthly Billings (Gross), Hourly Floor Rate
-- [ ] Sales pipeline output: Jobs to Win, Quotes Needed (30% win rate), Leads Needed (30% conversion)
 - [ ] Legal alerts: Gross Draw tax warning, Irish Two-Thirds VAT rule, Efficiency Cap override warning
 - [ ] Contextual plain-English explanations and asterisk notes on every input and output
 - [ ] Email-gated PDF report download (branded, printable)
