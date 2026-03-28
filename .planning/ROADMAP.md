@@ -142,7 +142,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 08-01-PLAN.md — Privacy policy page, GDPR consent checkbox component, and site footer with privacy link
+- [x] 08-01-PLAN.md — Privacy policy page, GDPR consent checkbox component, and site footer with privacy link
 
 ### Phase 9: Email Capture & Delivery
 **Goal**: Email-gated PDF download flow — modal captures email with GDPR consent, triggers PDF download, and sends a branded results summary email via serverless function.

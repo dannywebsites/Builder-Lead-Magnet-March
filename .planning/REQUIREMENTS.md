@@ -55,7 +55,7 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Lead Capture
 
 - [ ] **LEAD-01**: Email input modal appears when user clicks to download report
-- [ ] **LEAD-02**: GDPR-compliant consent checkbox before email submission
+- [x] **LEAD-02**: GDPR-compliant consent checkbox before email submission
 - [ ] **LEAD-03**: Email address captured and stored for follow-up marketing
 - [ ] **LEAD-04**: Branded PDF report generated client-side and available for download after email submission
 - [ ] **LEAD-05**: Email delivery of results summary sent to the captured address
@@ -72,7 +72,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [ ] **UX-01**: Mobile-first responsive design
 - [ ] **UX-02**: Fast initial page load (static export, no server rendering required)
-- [ ] **UX-03**: Cookieless analytics (no GDPR cookie banner required)
+- [x] **UX-03**: Cookieless analytics (no GDPR cookie banner required)
 - [ ] **UX-04**: Print-friendly on-screen results view
 
 ## v2 Requirements
@@ -153,7 +153,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ALRT-03 | Phase 6: Legal Alerts | Complete |
 | ALRT-04 | Phase 6: Legal Alerts | Complete |
 | LEAD-01 | Phase 9: Email Capture & Delivery | Pending |
-| LEAD-02 | Phase 8: GDPR Compliance & Privacy Infrastructure | Pending |
+| LEAD-02 | Phase 8: GDPR Compliance & Privacy Infrastructure | Complete |
 | LEAD-03 | Phase 9: Email Capture & Delivery | Pending |
 | LEAD-04 | Phase 9: Email Capture & Delivery | Pending |
 | LEAD-05 | Phase 9: Email Capture & Delivery | Pending |
@@ -164,7 +164,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PDF-05 | Phase 7: PDF Report Generation | Complete |
 | UX-01 | Phase 10: UX Polish, Performance & Launch Prep | Pending |
 | UX-02 | Phase 10: UX Polish, Performance & Launch Prep | Pending |
-| UX-03 | Phase 8: GDPR Compliance & Privacy Infrastructure | Pending |
+| UX-03 | Phase 8: GDPR Compliance & Privacy Infrastructure | Complete |
 | UX-04 | Phase 10: UX Polish, Performance & Launch Prep | Pending |
 
 **Coverage:**
