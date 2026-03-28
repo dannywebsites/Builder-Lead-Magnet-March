@@ -29,6 +29,7 @@ The tradesperson enters what they need to take home, and the app tells them the 
 - [x] Legal alerts: Gross Draw tax warning, Irish Two-Thirds VAT rule, Efficiency Cap override warning — Validated in Phase 6: Legal Alerts
 - [x] Contextual plain-English explanations and asterisk notes on every input — Validated in Phase 4: Contextual Copy & Input Guidance
 - [x] Email-gated PDF report download (branded, printable) — Validated in Phase 7: PDF Report Generation (PDF generation complete; email gate pending Phase 9)
+- [x] GDPR consent checkbox (unchecked by default, blocks submission) and privacy policy page — Validated in Phase 8: GDPR Compliance & Privacy Infrastructure
 - [ ] Email delivery of results summary
 - [ ] UK and Ireland support (VAT rates: 20% UK, 13.5% IE, 23% IE, 0% Exempt)
 
@@ -85,4 +86,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 after Phase 7 completion*
+*Last updated: 2026-03-28 after Phase 8 completion*
