@@ -96,7 +96,7 @@ Plans:
 
 Plans:
 - [x] 05-01-PLAN.md — Output copy constants, test infrastructure (jsdom), CalculatorApp state orchestrator, and WizardForm callback wiring
-- [ ] 05-02-PLAN.md — ResultsView component tree (FinancialAnchorCard, PipelineMetric), CalculatorApp integration, and human verification
+- [x] 05-02-PLAN.md — ResultsView component tree (FinancialAnchorCard, PipelineMetric), CalculatorApp integration, and human verification
 
 ### Phase 6: Legal Alerts
 **Goal**: Conditional legal and tax alerts fire based on user inputs and calculation results — Gross Draw warning, Irish Two-Thirds VAT rule, efficiency cap explanation, and CIS/RCT subcontractor warning.
