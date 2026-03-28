@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
+	CalculatorInputSchema,
+	CurrencySchema,
 	EntityTypeSchema,
 	VatRateSchema,
-	CurrencySchema,
-	CalculatorInputSchema,
 } from "@/lib/calculator/schemas";
 
 describe("EntityTypeSchema", () => {
@@ -83,26 +83,18 @@ describe("CalculatorInputSchema", () => {
 	});
 
 	it("rejects directCostPct above 0.80", () => {
-		expect(() =>
-			CalculatorInputSchema.parse({ ...validInput, directCostPct: 0.85 }),
-		).toThrow();
+		expect(() => CalculatorInputSchema.parse({ ...validInput, directCostPct: 0.85 })).toThrow();
 	});
 
 	it("rejects negative staffCount", () => {
-		expect(() =>
-			CalculatorInputSchema.parse({ ...validInput, staffCount: -1 }),
-		).toThrow();
+		expect(() => CalculatorInputSchema.parse({ ...validInput, staffCount: -1 })).toThrow();
 	});
 
 	it("rejects non-integer staffCount", () => {
-		expect(() =>
-			CalculatorInputSchema.parse({ ...validInput, staffCount: 1.5 }),
-		).toThrow();
+		expect(() => CalculatorInputSchema.parse({ ...validInput, staffCount: 1.5 })).toThrow();
 	});
 
 	it("rejects grossPersonalDraw of 0", () => {
-		expect(() =>
-			CalculatorInputSchema.parse({ ...validInput, grossPersonalDraw: 0 }),
-		).toThrow();
+		expect(() => CalculatorInputSchema.parse({ ...validInput, grossPersonalDraw: 0 })).toThrow();
 	});
 });

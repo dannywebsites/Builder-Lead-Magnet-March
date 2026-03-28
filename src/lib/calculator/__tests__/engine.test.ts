@@ -183,11 +183,7 @@ describe("calculate", () => {
 	});
 
 	it("contains no async, fetch, or server imports in engine.ts source", () => {
-		const enginePath = path.resolve(
-			__dirname,
-			"..",
-			"engine.ts",
-		);
+		const enginePath = path.resolve(__dirname, "..", "engine.ts");
 		const source = fs.readFileSync(enginePath, "utf-8");
 		expect(source).not.toMatch(/\basync\b/);
 		expect(source).not.toMatch(/\bfetch\b/);
@@ -196,7 +192,7 @@ describe("calculate", () => {
 
 	it("produces all finite numbers with no NaN or Infinity", () => {
 		const result = calculate(ltdInput);
-		for (const [key, value] of Object.entries(result)) {
+		for (const [_key, value] of Object.entries(result)) {
 			expect(Number.isFinite(value)).toBe(true);
 		}
 	});
@@ -215,7 +211,7 @@ describe("calculate", () => {
 			currency: "GBP",
 		};
 		const result = calculate(zeroStaffInput);
-		for (const [key, value] of Object.entries(result)) {
+		for (const [_key, value] of Object.entries(result)) {
 			expect(Number.isFinite(value)).toBe(true);
 		}
 	});

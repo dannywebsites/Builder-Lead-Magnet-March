@@ -7,10 +7,7 @@ import type { CalculatorInput, CalculatorOutput, EntityType } from "./types";
  * Ltd companies need to earn more to cover corporation tax (20% buffer).
  * Sole traders take the gross draw as-is.
  */
-export function calculateTaxBuffer(
-	entityType: EntityType,
-	grossPersonalDraw: number,
-): number {
+export function calculateTaxBuffer(entityType: EntityType, grossPersonalDraw: number): number {
 	if (entityType === "limited_company") {
 		return grossPersonalDraw / BUSINESS_RULES.CORP_TAX_BUFFER;
 	}
@@ -26,8 +23,7 @@ export function calculateStaffCost(
 	staffHourlyRate: number,
 	staffHoursPerWeek: number,
 ): { totalMonthlyHours: number; basePayroll: number; adjustedPayroll: number } {
-	const totalMonthlyHours =
-		staffCount * staffHoursPerWeek * BUSINESS_RULES.WEEKS_PER_MONTH;
+	const totalMonthlyHours = staffCount * staffHoursPerWeek * BUSINESS_RULES.WEEKS_PER_MONTH;
 	const basePayroll = totalMonthlyHours * staffHourlyRate;
 	const adjustedPayroll = basePayroll * BUSINESS_RULES.EMPLOYER_BURDEN;
 	return { totalMonthlyHours, basePayroll, adjustedPayroll };
@@ -68,10 +64,7 @@ export function calculateMRT(
  */
 export function calculate(input: CalculatorInput): CalculatorOutput {
 	// Step 1: Tax buffer
-	const targetBusinessProfit = calculateTaxBuffer(
-		input.entityType,
-		input.grossPersonalDraw,
-	);
+	const targetBusinessProfit = calculateTaxBuffer(input.entityType, input.grossPersonalDraw);
 
 	// Step 2: Staff cost
 	const { totalMonthlyHours, adjustedPayroll } = calculateStaffCost(
@@ -98,8 +91,7 @@ export function calculate(input: CalculatorInput): CalculatorOutput {
 
 	// Derived pipeline values (use unrounded MRT for precision)
 	const monthlyBillings = monthlyRevenueTarget * (1 + input.vatRate);
-	const hourlyFloorRate =
-		totalBillableHours > 0 ? monthlyRevenueTarget / totalBillableHours : 0;
+	const hourlyFloorRate = totalBillableHours > 0 ? monthlyRevenueTarget / totalBillableHours : 0;
 	const jobsToWin = monthlyRevenueTarget / input.avgJobValue;
 	const quotesNeeded = jobsToWin / BUSINESS_RULES.WIN_RATE;
 	const leadsNeeded = quotesNeeded / BUSINESS_RULES.LEAD_CONVERSION_RATE;

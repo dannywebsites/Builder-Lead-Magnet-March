@@ -14,7 +14,7 @@ export const CalculatorInputSchema = z.object({
 	staffHourlyRate: z.number().nonnegative(),
 	staffHoursPerWeek: z.number().nonnegative().max(168),
 	avgJobValue: z.number().positive(),
-	directCostPct: z.number().min(0).max(0.80),
+	directCostPct: z.number().min(0).max(0.8),
 	vatRate: VatRateSchema,
 	currency: CurrencySchema,
 });
