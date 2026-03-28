@@ -12,7 +12,9 @@ The tradesperson enters what they need to take home, and the app tells them the 
 
 ### Validated
 
-(None yet — ship to validate)
+- [x] Project scaffolding: Next.js 15, TypeScript strict, Tailwind 4, Biome, Vitest — Validated in Phase 1: Project Scaffolding & Type Foundation
+- [x] Zod validation schemas for all calculator inputs (entity type, VAT rates) — Validated in Phase 1
+- [x] Currency formatting (GBP + EUR) and rounding utilities — Validated in Phase 1
 
 ### Active
 
