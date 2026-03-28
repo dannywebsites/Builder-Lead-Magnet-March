@@ -80,7 +80,7 @@ Plans:
 
 Plans:
 - [x] 04-01-PLAN.md — UI component extensions (explanation/disclaimer props), field copy constants, and copy wiring for 3 step components
-- [ ] 04-02-PLAN.md — Itemized fixed costs breakdown (8 categories with running total), StepFinancials rewrite, and human verification
+- [x] 04-02-PLAN.md — Itemized fixed costs breakdown (8 categories with running total), StepFinancials rewrite, and human verification
 
 ### Phase 5: Results Display
 **Goal**: After form submission, headline financial anchors and sales pipeline numbers render instantly on-screen with plain-English explanations — no page reload, no server round-trip.
