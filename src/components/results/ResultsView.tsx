@@ -1,13 +1,16 @@
 import type { CalculatorOutput, Currency } from "@/lib/calculator/types";
+import type { Alert } from "@/lib/calculator/alerts";
 import { formatCurrency } from "@/lib/calculator/currency";
 import { OUTPUT_COPY, ZERO_STAFF_HOURLY_NOTE } from "@/lib/results/output-copy";
 import { FinancialAnchorCard } from "@/components/results/FinancialAnchorCard";
 import { PipelineMetric } from "@/components/results/PipelineMetric";
+import { AlertsSection } from "@/components/results/AlertsSection";
 
 interface ResultsViewProps {
 	output: CalculatorOutput;
 	currency: Currency;
 	staffCount: number;
+	alerts: Alert[];
 	onEdit: () => void;
 }
 
@@ -15,6 +18,7 @@ export function ResultsView({
 	output,
 	currency,
 	staffCount,
+	alerts,
 	onEdit,
 }: ResultsViewProps) {
 	return (
@@ -41,6 +45,9 @@ export function ResultsView({
 					note={staffCount === 0 ? ZERO_STAFF_HOURLY_NOTE : undefined}
 				/>
 			</div>
+
+			{/* Section: Important Notices (between anchors and pipeline) */}
+			<AlertsSection alerts={alerts} />
 
 			{/* Section 2: Sales Pipeline */}
 			<h2 className="text-2xl font-bold text-center mt-12 mb-6">

@@ -55,6 +55,7 @@ const defaultProps = {
 	output: MOCK_OUTPUT,
 	currency: "GBP" as Currency,
 	staffCount: 2,
+	alerts: [],
 	onEdit: () => {},
 };
 

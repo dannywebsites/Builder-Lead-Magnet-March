@@ -4,7 +4,11 @@ import { useCallback } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useQueryState, parseAsInteger } from "nuqs";
 
-import type { CalculatorOutput, Currency } from "@/lib/calculator/types";
+import type {
+	CalculatorInput,
+	CalculatorOutput,
+	Currency,
+} from "@/lib/calculator/types";
 import { STEP_SCHEMAS, type FormValues } from "@/lib/form/step-schemas";
 import { FORM_DEFAULTS } from "@/lib/form/form-defaults";
 import { transformToCalculatorInput } from "@/lib/form/transform";
@@ -20,6 +24,7 @@ interface WizardFormProps {
 		output: CalculatorOutput,
 		currency: Currency,
 		staffCount: number,
+		input: CalculatorInput,
 	) => void;
 }
 
@@ -60,7 +65,7 @@ export default function WizardForm({ onCalculated }: WizardFormProps) {
 		const data = methods.getValues();
 		const input = transformToCalculatorInput(data);
 		const result = calculate(input);
-		onCalculated(result, data.currency as Currency, Number(data.staffCount));
+		onCalculated(result, data.currency as Currency, Number(data.staffCount), input);
 	}, [methods, onCalculated]);
 
 	return (
