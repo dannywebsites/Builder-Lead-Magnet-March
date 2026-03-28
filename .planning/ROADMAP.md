@@ -49,7 +49,7 @@ Plans:
 
 Plans:
 - [x] 02-01: Core calculation functions (tax buffer, staff cost, efficiency cap, slippage, MRT)
-- [ ] 02-02: Sales pipeline calculations and comprehensive test suite
+- [x] 02-02: Sales pipeline calculations and comprehensive test suite
 
 ### Phase 3: Multi-Step Input Form
 **Goal**: Working multi-step wizard form that collects all required inputs with step-by-step Zod validation and a progress indicator — wired to the calculation engine but not yet displaying results.

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-28T10:01:54.375Z"
-last_activity: 2026-03-28 -- Phase 02 execution started
+stopped_at: Completed 02-02-PLAN.md
+last_updated: "2026-03-28T10:11:19.210Z"
+last_activity: 2026-03-28
 progress:
   total_phases: 10
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 4
-  completed_plans: 2
+  completed_plans: 4
   percent: 0
 ---
 
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-03-28)
 ## Current Position
 
 Phase: 02 (calculation-engine) — EXECUTING
-Plan: 1 of 2
-Status: Executing Phase 02
-Last activity: 2026-03-28 -- Phase 02 execution started
+Plan: 2 of 2
+Status: Ready to execute
+Last activity: 2026-03-28
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01 P02 | 2min | 2 tasks | 7 files |
+| Phase 02 P02 | 2min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,7 @@ Recent decisions affecting current work:
 - [Roadmap]: PDF before email (gate value depends on PDF existing)
 - [Phase 01]: VatRate schema uses string enum matching HTML select; TypeScript type uses numeric literals for calculation
 - [Phase 01]: Business rules enforced at Zod schema level per D-06 (directCostPct max 0.80, staffCount nonneg int)
+- [Phase 02]: Used actual engine-computed values for integration test assertions rather than plan hand-calculated values (corrected MRT rounding discrepancy)
 
 ### Pending Todos
 
@@ -77,6 +79,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T09:48:47.856Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-calculation-engine/02-CONTEXT.md
+Last session: 2026-03-28T10:11:19.207Z
+Stopped at: Completed 02-02-PLAN.md
+Resume file: None
