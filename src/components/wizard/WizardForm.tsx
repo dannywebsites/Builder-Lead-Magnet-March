@@ -9,22 +9,10 @@ import { FORM_DEFAULTS } from "@/lib/form/form-defaults";
 import { transformToCalculatorInput } from "@/lib/form/transform";
 import { calculate } from "@/lib/calculator";
 import { WizardProgress } from "./WizardProgress";
-
-const STEP_TITLES = [
-	{ title: "Your Business", description: "Tell us about your business setup" },
-	{
-		title: "Your Money",
-		description: "What you need to take home and what you spend",
-	},
-	{
-		title: "Your Team",
-		description: "Staff costs -- skip if you work solo",
-	},
-	{
-		title: "Your Jobs",
-		description: "How much your typical job is worth",
-	},
-];
+import { StepBusinessIdentity } from "./steps/StepBusinessIdentity";
+import { StepFinancials } from "./steps/StepFinancials";
+import { StepStaff } from "./steps/StepStaff";
+import { StepJobPricing } from "./steps/StepJobPricing";
 
 export default function WizardForm() {
 	const [step, setStep] = useQueryState(
@@ -63,8 +51,6 @@ export default function WizardForm() {
 		[],
 	);
 
-	const currentStepInfo = STEP_TITLES[step] ?? STEP_TITLES[0];
-
 	return (
 		<div className="max-w-2xl mx-auto px-4 py-12">
 			<WizardProgress
@@ -80,36 +66,10 @@ export default function WizardForm() {
 			<FormProvider {...methods}>
 				<form onSubmit={methods.handleSubmit(onSubmit)}>
 					<div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mt-8">
-						<h2 className="text-2xl font-semibold text-foreground">
-							{currentStepInfo.title}
-						</h2>
-						<p className="text-base text-gray-500 mt-1">
-							{currentStepInfo.description}
-						</p>
-
-						{/* Step content placeholders */}
-						<div className="mt-6 space-y-4">
-							{step === 0 && (
-								<div className="py-8 text-center text-gray-400">
-									Step 1: Your Business fields (Plan 02)
-								</div>
-							)}
-							{step === 1 && (
-								<div className="py-8 text-center text-gray-400">
-									Step 2: Your Money fields (Plan 02)
-								</div>
-							)}
-							{step === 2 && (
-								<div className="py-8 text-center text-gray-400">
-									Step 3: Your Team fields (Plan 02)
-								</div>
-							)}
-							{step === 3 && (
-								<div className="py-8 text-center text-gray-400">
-									Step 4: Your Jobs fields (Plan 02)
-								</div>
-							)}
-						</div>
+						{step === 0 && <StepBusinessIdentity />}
+						{step === 1 && <StepFinancials />}
+						{step === 2 && <StepStaff />}
+						{step === 3 && <StepJobPricing />}
 
 						{/* Navigation buttons */}
 						<div className="flex justify-between mt-8">
