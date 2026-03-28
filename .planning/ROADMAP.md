@@ -128,7 +128,7 @@ Plans:
 
 Plans:
 - [x] 07-01-PLAN.md — PDF component tree (@react-pdf/renderer install, branded layout, all sections, generation function, tests)
-- [ ] 07-02-PLAN.md — Download button integration (DownloadReportButton, CalculatorApp input state, ResultsView wiring, lazy loading)
+- [x] 07-02-PLAN.md — Download button integration (DownloadReportButton, CalculatorApp input state, ResultsView wiring, lazy loading)
 
 ### Phase 8: GDPR Compliance & Privacy Infrastructure
 **Goal**: GDPR-compliant consent mechanism, privacy policy, and cookieless analytics in place before any email is captured — this is a prerequisite for lead capture, not an afterthought.

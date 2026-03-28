@@ -65,8 +65,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **PDF-01**: Branded, printable PDF containing all financial anchors and sales marching orders
 - [x] **PDF-02**: PDF includes all plain-English notes and asterisk disclaimers from the output
 - [x] **PDF-03**: PDF includes all triggered legal alerts
-- [ ] **PDF-04**: PDF renders correctly across browsers (Chrome, Safari, Firefox, Edge)
-- [ ] **PDF-05**: PDF file size optimized (under 500KB)
+- [x] **PDF-04**: PDF renders correctly across browsers (Chrome, Safari, Firefox, Edge)
+- [x] **PDF-05**: PDF file size optimized (under 500KB)
 
 ### UX & Performance
 
@@ -160,8 +160,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PDF-01 | Phase 7: PDF Report Generation | Complete |
 | PDF-02 | Phase 7: PDF Report Generation | Complete |
 | PDF-03 | Phase 7: PDF Report Generation | Complete |
-| PDF-04 | Phase 7: PDF Report Generation | Pending |
-| PDF-05 | Phase 7: PDF Report Generation | Pending |
+| PDF-04 | Phase 7: PDF Report Generation | Complete |
+| PDF-05 | Phase 7: PDF Report Generation | Complete |
 | UX-01 | Phase 10: UX Polish, Performance & Launch Prep | Pending |
 | UX-02 | Phase 10: UX Polish, Performance & Launch Prep | Pending |
 | UX-03 | Phase 8: GDPR Compliance & Privacy Infrastructure | Pending |
