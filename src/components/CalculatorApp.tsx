@@ -12,6 +12,7 @@ import WizardForm from "@/components/wizard/WizardForm";
 import { ResultsView } from "@/components/results/ResultsView";
 
 interface ResultsState {
+	input: CalculatorInput;
 	output: CalculatorOutput;
 	currency: Currency;
 	staffCount: number;
@@ -28,12 +29,13 @@ export function CalculatorApp() {
 				<WizardForm
 					onCalculated={(output, currency, staffCount, input) => {
 						const alerts = getTriggeredAlerts(input, output);
-						setResults({ output, currency, staffCount, alerts });
+						setResults({ input, output, currency, staffCount, alerts });
 					}}
 				/>
 			</div>
 			{results && (
 				<ResultsView
+					input={results.input}
 					output={results.output}
 					currency={results.currency}
 					staffCount={results.staffCount}

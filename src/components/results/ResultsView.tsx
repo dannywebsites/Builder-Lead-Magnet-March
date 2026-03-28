@@ -1,12 +1,18 @@
-import type { CalculatorOutput, Currency } from "@/lib/calculator/types";
+import type {
+	CalculatorInput,
+	CalculatorOutput,
+	Currency,
+} from "@/lib/calculator/types";
 import type { Alert } from "@/lib/calculator/alerts";
 import { formatCurrency } from "@/lib/calculator/currency";
 import { OUTPUT_COPY, ZERO_STAFF_HOURLY_NOTE } from "@/lib/results/output-copy";
 import { FinancialAnchorCard } from "@/components/results/FinancialAnchorCard";
 import { PipelineMetric } from "@/components/results/PipelineMetric";
 import { AlertsSection } from "@/components/results/AlertsSection";
+import { DownloadReportButton } from "@/components/results/DownloadReportButton";
 
 interface ResultsViewProps {
+	input: CalculatorInput;
 	output: CalculatorOutput;
 	currency: Currency;
 	staffCount: number;
@@ -15,6 +21,7 @@ interface ResultsViewProps {
 }
 
 export function ResultsView({
+	input,
 	output,
 	currency,
 	staffCount,
@@ -71,8 +78,14 @@ export function ResultsView({
 				/>
 			</div>
 
-			{/* Section 3: Edit button */}
-			<div className="mt-10 text-center">
+			{/* Section 3: Actions */}
+			<div className="mt-10 flex flex-col items-center gap-3">
+				<DownloadReportButton
+					input={input}
+					output={output}
+					currency={currency}
+					alerts={alerts}
+				/>
 				<button
 					type="button"
 					onClick={onEdit}

@@ -1,11 +1,19 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import {
 	OUTPUT_COPY,
 	ZERO_STAFF_HOURLY_NOTE,
 } from "@/lib/results/output-copy";
 import { ResultsView } from "@/components/results/ResultsView";
-import type { CalculatorOutput, Currency } from "@/lib/calculator/types";
+import type {
+	CalculatorInput,
+	CalculatorOutput,
+	Currency,
+} from "@/lib/calculator/types";
+
+vi.mock("@/lib/pdf/generate-report", () => ({
+	generateAndDownloadReport: vi.fn().mockResolvedValue(undefined),
+}));
 
 describe("output-copy constants", () => {
 	it("has entries for all 6 headline output values", () => {
@@ -51,7 +59,21 @@ const MOCK_OUTPUT: CalculatorOutput = {
 	adjustedOverheads: 4800,
 };
 
+const defaultInput: CalculatorInput = {
+	entityType: "limited_company",
+	grossPersonalDraw: 4000,
+	fixedOverheads: 2000,
+	staffCount: 2,
+	staffHourlyRate: 15,
+	staffHoursPerWeek: 40,
+	avgJobValue: 3000,
+	directCostPct: 0.35,
+	vatRate: 0.2,
+	currency: "GBP",
+};
+
 const defaultProps = {
+	input: defaultInput,
 	output: MOCK_OUTPUT,
 	currency: "GBP" as Currency,
 	staffCount: 2,
