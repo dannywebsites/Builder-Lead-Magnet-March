@@ -154,11 +154,11 @@ Plans:
   2. PDF downloads only after valid email submission with consent checkbox checked
   3. Email address is captured and stored for follow-up marketing
   4. Branded results summary email is delivered to the captured address via Resend
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 09-01: Email capture modal UI and client-side gating logic
-- [ ] 09-02: Serverless email function (Vercel + Resend), email template, and SPF/DKIM/DMARC setup
+- [ ] 09-01-PLAN.md — Email capture modal UI, Zod schema, fetch wrapper, sonner toast, and DownloadReportButton rewiring
+- [ ] 09-02-PLAN.md — Resend API route, react-email template with financial anchors and alerts, contact storage
 
 ### Phase 10: UX Polish, Performance & Launch Prep
 **Goal**: Mobile-first responsive design pass, print-friendly results view, Lighthouse performance audit (90+ mobile), and cross-browser final verification.
