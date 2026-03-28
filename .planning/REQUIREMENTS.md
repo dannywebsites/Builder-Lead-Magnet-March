@@ -17,7 +17,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **FORM-06**: User can enter Staff Hours Per Week (contracted weekly hours)
 - [ ] **FORM-07**: User can enter Average Job Value (net/excluding VAT, based on recent history)
 - [ ] **FORM-08**: User can enter Direct Cost Percentage (materials, fuel, disposal — hard-capped at 80%)
-- [ ] **FORM-09**: User can select VAT Rate (20% UK / 13.5% IE / 23% IE / 0% Exempt)
+- [x] **FORM-09**: User can select VAT Rate (20% UK / 13.5% IE / 23% IE / 0% Exempt)
 - [ ] **FORM-10**: Every input field displays a plain-English note explaining what it means and why it matters
 - [ ] **FORM-11**: Every input field displays contextual asterisk notes where applicable (tax disclaimers, buffer explanations)
 - [ ] **FORM-12**: Form validates all inputs with helpful error messages before calculation
@@ -31,7 +31,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **CALC-04**: Step 4 — Slippage Factor: Real_Direct_Cost = Direct_Cost_Pct * 1.15
 - [ ] **CALC-05**: Step 5 — MRT: Adjusted_Overheads = Fixed_Overheads + Adjusted_Payroll; MRT = (Target_Business_Profit + Adjusted_Overheads) / (1 - Real_Direct_Cost)
 - [ ] **CALC-06**: All calculations execute client-side with no server round-trip
-- [ ] **CALC-07**: Floating point precision handled correctly (currency rounding to 2 decimal places)
+- [x] **CALC-07**: Floating point precision handled correctly (currency rounding to 2 decimal places)
 - [ ] **CALC-08**: Zero-staff edge case handled gracefully (no division errors, payroll = 0)
 
 ### Output Report
@@ -127,7 +127,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FORM-06 | Phase 3: Multi-Step Input Form | Pending |
 | FORM-07 | Phase 3: Multi-Step Input Form | Pending |
 | FORM-08 | Phase 3: Multi-Step Input Form | Pending |
-| FORM-09 | Phase 1: Project Scaffolding & Type Foundation | Pending |
+| FORM-09 | Phase 1: Project Scaffolding & Type Foundation | Complete |
 | FORM-10 | Phase 4: Contextual Copy & Input Guidance | Pending |
 | FORM-11 | Phase 4: Contextual Copy & Input Guidance | Pending |
 | FORM-12 | Phase 3: Multi-Step Input Form | Pending |
@@ -138,7 +138,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CALC-04 | Phase 2: Calculation Engine | Pending |
 | CALC-05 | Phase 2: Calculation Engine | Pending |
 | CALC-06 | Phase 2: Calculation Engine | Pending |
-| CALC-07 | Phase 1: Project Scaffolding & Type Foundation | Pending |
+| CALC-07 | Phase 1: Project Scaffolding & Type Foundation | Complete |
 | CALC-08 | Phase 2: Calculation Engine | Pending |
 | OUT-01 | Phase 5: Results Display | Pending |
 | OUT-02 | Phase 5: Results Display | Pending |
