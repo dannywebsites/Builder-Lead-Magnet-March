@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
 // Mock resend before importing route
+// Vitest 4.x requires function/class for constructors (arrow functions cannot be used with `new`)
 vi.mock("resend", () => {
 	const mockSend = vi
 		.fn()
@@ -9,10 +10,12 @@ vi.mock("resend", () => {
 		.fn()
 		.mockResolvedValue({ data: {}, error: null });
 	return {
-		Resend: vi.fn().mockImplementation(() => ({
-			emails: { send: mockSend },
-			contacts: { create: mockCreate },
-		})),
+		Resend: vi.fn().mockImplementation(function () {
+			return {
+				emails: { send: mockSend },
+				contacts: { create: mockCreate },
+			};
+		}),
 	};
 });
 
