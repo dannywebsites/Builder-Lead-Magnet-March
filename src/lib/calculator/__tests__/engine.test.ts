@@ -46,8 +46,8 @@ describe("calculateStaffCost", () => {
 
 describe("calculateBillableHours", () => {
 	it("applies 75% efficiency cap to monthly hours", () => {
-		// 346.4 * 0.75 = 259.8
-		expect(calculateBillableHours(346.4)).toBe(259.8);
+		// 346.4 * 0.75 = 259.8 (may have floating point drift)
+		expect(calculateBillableHours(346.4)).toBeCloseTo(259.8, 10);
 	});
 
 	it("returns 0 for 0 monthly hours", () => {
@@ -69,9 +69,9 @@ describe("calculateSlippage", () => {
 
 describe("calculateMRT", () => {
 	it("calculates MRT from profit, overheads, and real direct cost", () => {
-		// (5000 + 8254.80) / (1 - 0.2875) = 13254.80 / 0.7125 = 18603.578947...
+		// (5000 + 8254.8) / (1 - 0.2875) = 13254.8 / 0.7125 = 18603.228070...
 		const result = calculateMRT(5000, 8254.8, 0.2875);
-		expect(result).toBeCloseTo(18603.578947368, 4);
+		expect(result).toBeCloseTo(18603.228070175435, 4);
 	});
 });
 
@@ -101,18 +101,18 @@ describe("calculate", () => {
 		// adjustedOverheads = 1500 + 6754.80 = 8254.80
 		expect(result.adjustedOverheads).toBe(8254.8);
 
-		// totalBillableHours = 346.4 * 0.75 = 259.80
+		// totalBillableHours = roundCurrency(346.4 * 0.75) = roundCurrency(259.7999...) = 259.8
 		expect(result.totalBillableHours).toBe(259.8);
 
 		// realDirectCost = 0.25 * 1.15 = 0.2875
 		expect(result.realDirectCost).toBeCloseTo(0.2875, 10);
 
-		// MRT = (5000 + 8254.80) / (1 - 0.2875) = 18603.578947...
-		// roundCurrency(18603.578947...) = 18603.58
-		expect(result.monthlyRevenueTarget).toBe(18603.58);
+		// MRT = (5000 + 8254.8) / (1 - 0.2875) = 13254.8 / 0.7125 = 18603.228070...
+		// roundCurrency(18603.228070...) = 18603.23
+		expect(result.monthlyRevenueTarget).toBe(18603.23);
 
-		// monthlyBillings = roundCurrency(18603.578947... * 1.20) = roundCurrency(22324.294736...) = 22324.29
-		expect(result.monthlyBillings).toBe(22324.29);
+		// monthlyBillings = roundCurrency(18603.228070... * 1.20) = roundCurrency(22323.873684...) = 22323.87
+		expect(result.monthlyBillings).toBe(22323.87);
 
 		// hourlyFloorRate = roundCurrency(18603.578947... / 259.8) = roundCurrency(71.607...) = 71.61
 		expect(result.hourlyFloorRate).toBe(71.61);
@@ -141,9 +141,9 @@ describe("calculate", () => {
 		// targetBusinessProfit = 4000 (pass-through)
 		expect(result.targetBusinessProfit).toBe(4000);
 
-		// MRT = (4000 + 8254.80) / (1 - 0.2875) = 12254.80 / 0.7125 = 17201.473684...
-		// roundCurrency = 17201.47
-		expect(result.monthlyRevenueTarget).toBe(17201.47);
+		// MRT = (4000 + 8254.8) / (1 - 0.2875) = 12254.8 / 0.7125 = 17199.719298...
+		// roundCurrency = 17199.72
+		expect(result.monthlyRevenueTarget).toBe(17199.72);
 	});
 
 	it("handles zero-staff scenario correctly", () => {
