@@ -27,7 +27,7 @@ The tradesperson enters what they need to take home, and the app tells them the 
 - [x] Multi-step input form capturing: entity type, gross personal draw, fixed overheads, staff details, average job value, direct cost %, and VAT rate — Validated in Phase 3: Multi-Step Input Form
 - [ ] Output report: Monthly Revenue Goal (Net), Monthly Billings (Gross), Hourly Floor Rate
 - [ ] Legal alerts: Gross Draw tax warning, Irish Two-Thirds VAT rule, Efficiency Cap override warning
-- [ ] Contextual plain-English explanations and asterisk notes on every input and output
+- [x] Contextual plain-English explanations and asterisk notes on every input — Validated in Phase 4: Contextual Copy & Input Guidance
 - [ ] Email-gated PDF report download (branded, printable)
 - [ ] Email delivery of results summary
 - [ ] UK and Ireland support (VAT rates: 20% UK, 13.5% IE, 23% IE, 0% Exempt)
@@ -85,4 +85,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 after Phase 3 completion*
+*Last updated: 2026-03-28 after Phase 4 completion*
