@@ -2,6 +2,7 @@
 
 import { useWatch } from "react-hook-form";
 import { NumberInput } from "@/components/ui/NumberInput";
+import { FIELD_COPY } from "@/lib/form/field-copy";
 
 export function StepJobPricing() {
 	const currency = useWatch({ name: "currency" });
@@ -20,6 +21,7 @@ export function StepJobPricing() {
 				placeholder="e.g. 3000"
 				min={0}
 				step="0.01"
+				explanation={FIELD_COPY.avgJobValue.explanation}
 			/>
 			<NumberInput
 				name="directCostPctDisplay"
@@ -29,6 +31,8 @@ export function StepJobPricing() {
 				min={0}
 				max={80}
 				step="0.1"
+				explanation={FIELD_COPY.directCostPctDisplay.explanation}
+				disclaimer={FIELD_COPY.directCostPctDisplay.disclaimer ?? undefined}
 			/>
 		</div>
 	);

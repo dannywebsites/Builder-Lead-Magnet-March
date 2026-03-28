@@ -1,6 +1,7 @@
 "use client";
 
 import { SelectInput } from "@/components/ui/SelectInput";
+import { FIELD_COPY } from "@/lib/form/field-copy";
 
 const ENTITY_TYPE_OPTIONS = [
 	{ label: "Limited Company", value: "limited_company" },
@@ -30,16 +31,19 @@ export function StepBusinessIdentity() {
 				name="entityType"
 				label="Business Type"
 				options={ENTITY_TYPE_OPTIONS}
+				explanation={FIELD_COPY.entityType.explanation}
 			/>
 			<SelectInput
 				name="currency"
 				label="Currency"
 				options={CURRENCY_OPTIONS}
+				explanation={FIELD_COPY.currency.explanation}
 			/>
 			<SelectInput
 				name="vatRate"
 				label="VAT Rate"
 				options={VAT_RATE_OPTIONS}
+				explanation={FIELD_COPY.vatRate.explanation}
 			/>
 		</div>
 	);

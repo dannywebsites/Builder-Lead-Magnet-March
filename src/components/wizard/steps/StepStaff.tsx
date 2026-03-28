@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useWatch, useFormContext } from "react-hook-form";
 import { NumberInput } from "@/components/ui/NumberInput";
+import { FIELD_COPY } from "@/lib/form/field-copy";
 
 export function StepStaff() {
 	const { setValue } = useFormContext();
@@ -31,6 +32,7 @@ export function StepStaff() {
 				placeholder="0"
 				min={0}
 				step="1"
+				explanation={FIELD_COPY.staffCount.explanation}
 			/>
 			<NumberInput
 				name="staffHourlyRate"
@@ -40,6 +42,8 @@ export function StepStaff() {
 				disabled={isStaffDisabled}
 				min={0}
 				step="0.01"
+				explanation={FIELD_COPY.staffHourlyRate.explanation}
+				disclaimer={FIELD_COPY.staffHourlyRate.disclaimer ?? undefined}
 			/>
 			<NumberInput
 				name="staffHoursPerWeek"
@@ -50,6 +54,8 @@ export function StepStaff() {
 				min={0}
 				max={168}
 				step="0.5"
+				explanation={FIELD_COPY.staffHoursPerWeek.explanation}
+				disclaimer={FIELD_COPY.staffHoursPerWeek.disclaimer ?? undefined}
 			/>
 		</div>
 	);
