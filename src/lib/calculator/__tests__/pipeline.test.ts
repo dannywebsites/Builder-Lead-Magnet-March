@@ -7,10 +7,7 @@ import type { CalculatorInput, CalculatorOutput } from "@/lib/calculator/types";
  */
 function assertAllFinite(output: CalculatorOutput): void {
 	for (const [key, value] of Object.entries(output)) {
-		expect(
-			Number.isFinite(value),
-			`Expected ${key} to be finite, got ${value}`,
-		).toBe(true);
+		expect(Number.isFinite(value), `Expected ${key} to be finite, got ${value}`).toBe(true);
 	}
 }
 

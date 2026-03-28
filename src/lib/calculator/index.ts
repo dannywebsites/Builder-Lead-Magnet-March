@@ -1,24 +1,31 @@
 // Types
-export type {
-	EntityType,
-	Currency,
-	VatRateValue,
-	CalculatorInput,
-	CalculatorOutput,
-} from "./types";
-export { VAT_RATE_OPTIONS } from "./types";
 
 // Constants
-export { VAT_RATES, BUSINESS_RULES } from "./constants";
-
-// Schemas
-export {
-	EntityTypeSchema,
-	VatRateSchema,
-	CurrencySchema,
-	CalculatorInputSchema,
-} from "./schemas";
-export type { ValidatedCalculatorInput } from "./schemas";
-
+export { BUSINESS_RULES, VAT_RATES } from "./constants";
 // Utilities
 export { formatCurrency, roundCurrency } from "./currency";
+// Engine
+export {
+	calculate,
+	calculateBillableHours,
+	calculateMRT,
+	calculateSlippage,
+	calculateStaffCost,
+	calculateTaxBuffer,
+} from "./engine";
+export type { ValidatedCalculatorInput } from "./schemas";
+// Schemas
+export {
+	CalculatorInputSchema,
+	CurrencySchema,
+	EntityTypeSchema,
+	VatRateSchema,
+} from "./schemas";
+export type {
+	CalculatorInput,
+	CalculatorOutput,
+	Currency,
+	EntityType,
+	VatRateValue,
+} from "./types";
+export { VAT_RATE_OPTIONS } from "./types";
