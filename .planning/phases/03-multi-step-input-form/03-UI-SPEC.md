@@ -50,7 +50,7 @@ Exceptions: Touch target minimum height is 44px for all interactive elements (in
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
 | Body | 16px | 400 (regular) | 1.5 | Form field helper text, step descriptions |
-| Label | 14px | 500 (medium) | 1.4 | Form field labels, progress step labels |
+| Label | 14px | 600 (semibold) | 1.4 | Form field labels, progress step labels |
 | Heading | 24px | 600 (semibold) | 1.2 | Step titles (e.g., "Your Business", "Your Money") |
 | Error | 14px | 400 (regular) | 1.4 | Validation error messages |
 
@@ -58,8 +58,8 @@ Exceptions: Touch target minimum height is 44px for all interactive elements (in
 
 **Notes:**
 - Only 3 sizes declared (14px, 16px, 24px) to maintain visual discipline across the 4-step form.
-- Weight 500 (medium) is used for labels to distinguish them from body text without heavy contrast.
-- Weight 600 (semibold) reserved for step headings only.
+- Only 2 weights used: 400 (regular) for body text, helper text, and error messages; 600 (semibold) for labels and headings.
+- Labels share the semibold weight with headings but are differentiated by size (14px vs 24px), providing clear hierarchy without a third weight.
 - All text renders in Geist Sans via the CSS variable already configured in `layout.tsx`.
 
 ---
@@ -77,7 +77,7 @@ Exceptions: Touch target minimum height is 44px for all interactive elements (in
 | Text secondary | `#6b7280` | `text-gray-500` | Helper text, currency prefix/suffix, disabled text |
 
 **Accent reserved for:**
-- "Next" / "Calculate" primary CTA buttons (solid background)
+- "Next Step" / "Calculate" primary CTA buttons (solid background)
 - Active step indicator in the progress stepper
 - Focused input border ring (`focus:ring-blue-500`)
 
@@ -124,7 +124,7 @@ Components created in this phase, referenced by the planner and executor:
 | State | Visual Treatment |
 |-------|-----------------|
 | Completed step | Filled circle with white checkmark on `bg-blue-600`, label in `text-foreground` |
-| Current step | Circle with `ring-2 ring-blue-600` outline, step number inside, label in `text-foreground font-medium` |
+| Current step | Circle with `ring-2 ring-blue-600` outline, step number inside, label in `text-foreground font-semibold` |
 | Upcoming step | Circle with `bg-gray-200`, step number in `text-gray-400`, label in `text-gray-400` |
 | Connector line (completed) | `bg-blue-600` solid line between circles |
 | Connector line (upcoming) | `bg-gray-200` solid line between circles |
@@ -140,14 +140,14 @@ Step labels (displayed below each circle):
 | Button | Position | Variant | Visible When |
 |--------|----------|---------|-------------|
 | "Back" | Bottom-left of step card | Ghost/text style: `text-gray-600 hover:text-foreground` | Steps 2, 3, 4 (hidden on Step 1) |
-| "Next" | Bottom-right of step card | Primary solid: `bg-blue-600 text-white hover:bg-blue-700` | Steps 1, 2, 3 |
-| "Calculate" | Bottom-right of step card | Primary solid: `bg-blue-600 text-white hover:bg-blue-700` | Step 4 only (final step) |
+| "Next Step" | Bottom-right of step card | Primary solid: `bg-blue-600 text-white hover:bg-blue-700` | Steps 1, 2, 3 |
+| "Calculate Your Numbers" | Bottom-right of step card | Primary solid: `bg-blue-600 text-white hover:bg-blue-700` | Step 4 only (final step) |
 
-**Button sizing:** `px-6 py-3 rounded-lg text-base font-medium` -- minimum 44px touch target height.
+**Button sizing:** `px-6 py-3 rounded-lg text-base font-semibold` -- minimum 44px touch target height.
 
 ### Step Navigation Rules
 
-- **Forward:** Clicking "Next" triggers validation on the current step's fields only. If all pass, advance to next step. If any fail, show inline errors and do not advance.
+- **Forward:** Clicking "Next Step" triggers validation on the current step's fields only. If all pass, advance to next step. If any fail, show inline errors and do not advance.
 - **Backward:** Clicking "Back" navigates to the previous step immediately. No validation on back navigation. All entered data is preserved (single `useForm` instance).
 - **Stepper click:** Clicking a completed step circle navigates back to that step. Clicking an upcoming step does nothing. This allows review of completed steps without forcing re-validation.
 - **URL state:** Current step stored in URL as `?step=0` through `?step=3` via nuqs. Browser back/forward buttons navigate between steps. Default is `step=0`.
@@ -156,8 +156,8 @@ Step labels (displayed below each circle):
 
 | Trigger | Behavior |
 |---------|----------|
-| "Next" button click | Validate all fields in the current step. Show errors inline below each invalid field. Focus moves to the first invalid field. |
-| Field blur (after first "Next" attempt) | Re-validate the blurred field immediately. Clear error if now valid. Mode: `onTouched`. |
+| "Next Step" button click | Validate all fields in the current step. Show errors inline below each invalid field. Focus moves to the first invalid field. |
+| Field blur (after first "Next Step" attempt) | Re-validate the blurred field immediately. Clear error if now valid. Mode: `onTouched`. |
 | Field change (after error shown) | Clear the specific field error as soon as the user begins correcting it. |
 
 **Error display:** Red text (`text-red-600`, 14px) directly below the invalid field, with 8px gap. The field border changes to `border-red-500`. The error message is linked via `aria-describedby`.
@@ -179,7 +179,7 @@ When `staffCount` equals 0:
 - **HTML attributes:** `min=0 max=80 step="0.1"` with `%` suffix
 - **Validation message for >80:** "Direct costs cannot exceed 80% -- this protects your margin"
 
-### Form Submission (Step 4 "Calculate")
+### Form Submission (Step 4 "Calculate Your Numbers")
 
 1. Validate Step 4 fields
 2. If valid, transform form data: convert `directCostPctDisplay` (0-80) to `directCostPct` (0.0-0.8), convert VatRate string to numeric `VatRateValue`
@@ -254,12 +254,16 @@ None in this phase. There is no delete, reset, or destructive action. The "Back"
 
 ### Primary CTA
 
-- Steps 1-3: **"Next"**
+- Steps 1-3: **"Next Step"**
 - Step 4: **"Calculate Your Numbers"**
 
 ---
 
 ## Layout Contract
+
+### Focal Point
+
+The visual anchors for each step screen are the step title (24px semibold, top of the step card) and the primary CTA button ("Next Step" or "Calculate Your Numbers", accent-colored, bottom-right of the step card). The user's eye should travel from the title down through the form fields to the CTA -- a single vertical reading line with the two highest-contrast elements bookending the content.
 
 ### Page Layout
 
@@ -275,7 +279,7 @@ None in this phase. There is no delete, reset, or destructive action. The "Back"
 
 ### Responsive Behavior
 
-- **Mobile (< 640px):** Full-width card with `px-4`. Progress stepper labels hidden; show step numbers only. Fields stack vertically. Buttons stack vertically (Calculate/Next on top, Back below) if needed, but prefer side-by-side at this width.
+- **Mobile (< 640px):** Full-width card with `px-4`. Progress stepper labels hidden; show step numbers only. Fields stack vertically. Buttons stack vertically (Calculate/Next Step on top, Back below) if needed, but prefer side-by-side at this width.
 - **Tablet and up (>= 640px):** `max-w-2xl` centered container. Full progress stepper with labels. Buttons side-by-side.
 - **No horizontal scrolling** at any viewport width.
 
@@ -299,7 +303,7 @@ None in this phase. There is no delete, reset, or destructive action. The "Back"
 | Error association | Invalid fields use `aria-invalid="true"` and `aria-describedby` pointing to error `<p>` |
 | Error announcement | Error messages use `role="alert"` so screen readers announce them |
 | Focus management | On validation failure, focus moves to the first invalid field |
-| Keyboard navigation | Tab order follows visual order. Enter submits current step (Next/Calculate). |
+| Keyboard navigation | Tab order follows visual order. Enter submits current step (Next Step/Calculate). |
 | Disabled fields | Disabled inputs use native `disabled` attribute (removed from tab order automatically) |
 | Touch targets | All interactive elements are at least 44px tall |
 | Color contrast | Text on white: `#171717` = 15.4:1 ratio (AAA). Error red on white: `#dc2626` = 4.6:1 (AA). Gray-500 on white: `#6b7280` = 5.0:1 (AA). |
