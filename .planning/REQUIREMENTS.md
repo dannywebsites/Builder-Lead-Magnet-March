@@ -47,10 +47,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Legal Alerts
 
-- [ ] **ALRT-01**: Gross Draw Warning — displayed for both entity types, explains personal tax is not covered by the business target
-- [ ] **ALRT-02**: Irish Two-Thirds Rule — IF VAT_Rate == 13.5% AND Direct_Cost_Pct > 0.66 THEN alert: must use 23% rate
-- [ ] **ALRT-03**: Efficiency Cap Warning — IF user attempts to override 75% billable hours, display explanation that it is hard-capped
-- [ ] **ALRT-04**: CIS/RCT Subcontractor Warning — alert about cash flow impact of withholding tax (up to 30% UK / 35% IE)
+- [x] **ALRT-01**: Gross Draw Warning — displayed for both entity types, explains personal tax is not covered by the business target
+- [x] **ALRT-02**: Irish Two-Thirds Rule — IF VAT_Rate == 13.5% AND Direct_Cost_Pct > 0.66 THEN alert: must use 23% rate
+- [x] **ALRT-03**: Efficiency Cap Warning — IF user attempts to override 75% billable hours, display explanation that it is hard-capped
+- [x] **ALRT-04**: CIS/RCT Subcontractor Warning — alert about cash flow impact of withholding tax (up to 30% UK / 35% IE)
 
 ### Lead Capture
 
@@ -148,10 +148,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | OUT-06 | Phase 5: Results Display | Complete |
 | OUT-07 | Phase 5: Results Display | Complete |
 | OUT-08 | Phase 5: Results Display | Complete |
-| ALRT-01 | Phase 6: Legal Alerts | Pending |
-| ALRT-02 | Phase 6: Legal Alerts | Pending |
-| ALRT-03 | Phase 6: Legal Alerts | Pending |
-| ALRT-04 | Phase 6: Legal Alerts | Pending |
+| ALRT-01 | Phase 6: Legal Alerts | Complete |
+| ALRT-02 | Phase 6: Legal Alerts | Complete |
+| ALRT-03 | Phase 6: Legal Alerts | Complete |
+| ALRT-04 | Phase 6: Legal Alerts | Complete |
 | LEAD-01 | Phase 9: Email Capture & Delivery | Pending |
 | LEAD-02 | Phase 8: GDPR Compliance & Privacy Infrastructure | Pending |
 | LEAD-03 | Phase 9: Email Capture & Delivery | Pending |

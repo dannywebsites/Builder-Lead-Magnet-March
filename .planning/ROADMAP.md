@@ -111,7 +111,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 06-01-PLAN.md — Alert trigger logic (TDD), copy constants, UI components, and results screen integration
+- [x] 06-01-PLAN.md — Alert trigger logic (TDD), copy constants, UI components, and results screen integration
 
 ### Phase 7: PDF Report Generation
 **Goal**: Client-side branded PDF report containing all financial anchors, sales pipeline targets, legal alerts, plain-English notes, and asterisk disclaimers — lazy-loaded on user action, optimized under 500KB.
