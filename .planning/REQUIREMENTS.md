@@ -119,59 +119,59 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FORM-01 | TBD | Pending |
-| FORM-02 | TBD | Pending |
-| FORM-03 | TBD | Pending |
-| FORM-04 | TBD | Pending |
-| FORM-05 | TBD | Pending |
-| FORM-06 | TBD | Pending |
-| FORM-07 | TBD | Pending |
-| FORM-08 | TBD | Pending |
-| FORM-09 | TBD | Pending |
-| FORM-10 | TBD | Pending |
-| FORM-11 | TBD | Pending |
-| FORM-12 | TBD | Pending |
-| FORM-13 | TBD | Pending |
-| CALC-01 | TBD | Pending |
-| CALC-02 | TBD | Pending |
-| CALC-03 | TBD | Pending |
-| CALC-04 | TBD | Pending |
-| CALC-05 | TBD | Pending |
-| CALC-06 | TBD | Pending |
-| CALC-07 | TBD | Pending |
-| CALC-08 | TBD | Pending |
-| OUT-01 | TBD | Pending |
-| OUT-02 | TBD | Pending |
-| OUT-03 | TBD | Pending |
-| OUT-04 | TBD | Pending |
-| OUT-05 | TBD | Pending |
-| OUT-06 | TBD | Pending |
-| OUT-07 | TBD | Pending |
-| OUT-08 | TBD | Pending |
-| ALRT-01 | TBD | Pending |
-| ALRT-02 | TBD | Pending |
-| ALRT-03 | TBD | Pending |
-| ALRT-04 | TBD | Pending |
-| LEAD-01 | TBD | Pending |
-| LEAD-02 | TBD | Pending |
-| LEAD-03 | TBD | Pending |
-| LEAD-04 | TBD | Pending |
-| LEAD-05 | TBD | Pending |
-| PDF-01 | TBD | Pending |
-| PDF-02 | TBD | Pending |
-| PDF-03 | TBD | Pending |
-| PDF-04 | TBD | Pending |
-| PDF-05 | TBD | Pending |
-| UX-01 | TBD | Pending |
-| UX-02 | TBD | Pending |
-| UX-03 | TBD | Pending |
-| UX-04 | TBD | Pending |
+| FORM-01 | Phase 1: Project Scaffolding & Type Foundation | Pending |
+| FORM-02 | Phase 3: Multi-Step Input Form | Pending |
+| FORM-03 | Phase 3: Multi-Step Input Form | Pending |
+| FORM-04 | Phase 3: Multi-Step Input Form | Pending |
+| FORM-05 | Phase 3: Multi-Step Input Form | Pending |
+| FORM-06 | Phase 3: Multi-Step Input Form | Pending |
+| FORM-07 | Phase 3: Multi-Step Input Form | Pending |
+| FORM-08 | Phase 3: Multi-Step Input Form | Pending |
+| FORM-09 | Phase 1: Project Scaffolding & Type Foundation | Pending |
+| FORM-10 | Phase 4: Contextual Copy & Input Guidance | Pending |
+| FORM-11 | Phase 4: Contextual Copy & Input Guidance | Pending |
+| FORM-12 | Phase 3: Multi-Step Input Form | Pending |
+| FORM-13 | Phase 3: Multi-Step Input Form | Pending |
+| CALC-01 | Phase 2: Calculation Engine | Pending |
+| CALC-02 | Phase 2: Calculation Engine | Pending |
+| CALC-03 | Phase 2: Calculation Engine | Pending |
+| CALC-04 | Phase 2: Calculation Engine | Pending |
+| CALC-05 | Phase 2: Calculation Engine | Pending |
+| CALC-06 | Phase 2: Calculation Engine | Pending |
+| CALC-07 | Phase 1: Project Scaffolding & Type Foundation | Pending |
+| CALC-08 | Phase 2: Calculation Engine | Pending |
+| OUT-01 | Phase 5: Results Display | Pending |
+| OUT-02 | Phase 5: Results Display | Pending |
+| OUT-03 | Phase 5: Results Display | Pending |
+| OUT-04 | Phase 5: Results Display | Pending |
+| OUT-05 | Phase 5: Results Display | Pending |
+| OUT-06 | Phase 5: Results Display | Pending |
+| OUT-07 | Phase 5: Results Display | Pending |
+| OUT-08 | Phase 5: Results Display | Pending |
+| ALRT-01 | Phase 6: Legal Alerts | Pending |
+| ALRT-02 | Phase 6: Legal Alerts | Pending |
+| ALRT-03 | Phase 6: Legal Alerts | Pending |
+| ALRT-04 | Phase 6: Legal Alerts | Pending |
+| LEAD-01 | Phase 9: Email Capture & Delivery | Pending |
+| LEAD-02 | Phase 8: GDPR Compliance & Privacy Infrastructure | Pending |
+| LEAD-03 | Phase 9: Email Capture & Delivery | Pending |
+| LEAD-04 | Phase 9: Email Capture & Delivery | Pending |
+| LEAD-05 | Phase 9: Email Capture & Delivery | Pending |
+| PDF-01 | Phase 7: PDF Report Generation | Pending |
+| PDF-02 | Phase 7: PDF Report Generation | Pending |
+| PDF-03 | Phase 7: PDF Report Generation | Pending |
+| PDF-04 | Phase 7: PDF Report Generation | Pending |
+| PDF-05 | Phase 7: PDF Report Generation | Pending |
+| UX-01 | Phase 10: UX Polish, Performance & Launch Prep | Pending |
+| UX-02 | Phase 10: UX Polish, Performance & Launch Prep | Pending |
+| UX-03 | Phase 8: GDPR Compliance & Privacy Infrastructure | Pending |
+| UX-04 | Phase 10: UX Polish, Performance & Launch Prep | Pending |
 
 **Coverage:**
 - v1 requirements: 47 total
-- Mapped to phases: 0
-- Unmapped: 47
+- Mapped to phases: 47
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-28*
-*Last updated: 2026-03-28 after initial definition*
+*Last updated: 2026-03-28 after roadmap phase mapping*
