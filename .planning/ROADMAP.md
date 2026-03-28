@@ -158,7 +158,7 @@ Plans:
 
 Plans:
 - [x] 09-01-PLAN.md — Email capture modal UI, Zod schema, fetch wrapper, sonner toast, and DownloadReportButton rewiring
-- [ ] 09-02-PLAN.md — Resend API route, react-email template with financial anchors and alerts, contact storage
+- [x] 09-02-PLAN.md — Resend API route, react-email template with financial anchors and alerts, contact storage
 
 ### Phase 10: UX Polish, Performance & Launch Prep
 **Goal**: Mobile-first responsive design pass, print-friendly results view, Lighthouse performance audit (90+ mobile), and cross-browser final verification.

@@ -56,9 +56,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **LEAD-01**: Email input modal appears when user clicks to download report
 - [x] **LEAD-02**: GDPR-compliant consent checkbox before email submission
-- [ ] **LEAD-03**: Email address captured and stored for follow-up marketing
+- [x] **LEAD-03**: Email address captured and stored for follow-up marketing
 - [x] **LEAD-04**: Branded PDF report generated client-side and available for download after email submission
-- [ ] **LEAD-05**: Email delivery of results summary sent to the captured address
+- [x] **LEAD-05**: Email delivery of results summary sent to the captured address
 
 ### PDF Report
 
@@ -154,9 +154,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ALRT-04 | Phase 6: Legal Alerts | Complete |
 | LEAD-01 | Phase 9: Email Capture & Delivery | Complete |
 | LEAD-02 | Phase 8: GDPR Compliance & Privacy Infrastructure | Complete |
-| LEAD-03 | Phase 9: Email Capture & Delivery | Pending |
+| LEAD-03 | Phase 9: Email Capture & Delivery | Complete |
 | LEAD-04 | Phase 9: Email Capture & Delivery | Complete |
-| LEAD-05 | Phase 9: Email Capture & Delivery | Pending |
+| LEAD-05 | Phase 9: Email Capture & Delivery | Complete |
 | PDF-01 | Phase 7: PDF Report Generation | Complete |
 | PDF-02 | Phase 7: PDF Report Generation | Complete |
 | PDF-03 | Phase 7: PDF Report Generation | Complete |
