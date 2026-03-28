@@ -28,7 +28,7 @@ Build a client-side financial calculator that works backward from a tradesperson
   1. Next.js 15 app builds and runs locally with TypeScript, Tailwind CSS 4, and Biome configured
   2. Zod schemas for all calculator inputs (entity type, draw, overheads, staff, job value, direct cost %, VAT rate) exist and validate correctly
   3. Currency formatting utility correctly formats GBP and EUR values to 2 decimal places
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
 - [ ] 01-01: Project scaffolding (Next.js 15, TypeScript, Tailwind 4, Biome)
