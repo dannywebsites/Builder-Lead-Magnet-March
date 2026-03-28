@@ -12,6 +12,8 @@ interface NumberInputProps {
 	min?: number;
 	max?: number;
 	step?: string;
+	explanation?: string;
+	disclaimer?: string;
 }
 
 export function NumberInput({
@@ -24,6 +26,8 @@ export function NumberInput({
 	min,
 	max,
 	step,
+	explanation,
+	disclaimer,
 }: NumberInputProps) {
 	const {
 		register,
@@ -40,6 +44,11 @@ export function NumberInput({
 			>
 				{label}
 			</label>
+			{explanation && (
+				<p className={`text-sm text-gray-500 ${disabled ? "opacity-50" : ""}`}>
+					{explanation}
+				</p>
+			)}
 			<div className="relative">
 				{prefix && (
 					<span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
@@ -55,7 +64,7 @@ export function NumberInput({
 					max={max}
 					step={step}
 					aria-invalid={!!error}
-					aria-describedby={error ? `${name}-error` : undefined}
+					aria-describedby={[error ? `${name}-error` : "", disclaimer ? `${name}-disclaimer` : ""].filter(Boolean).join(" ") || undefined}
 					className={`w-full rounded-lg border px-3 py-3 min-h-[44px] bg-white focus:outline-none focus:ring-2 ${
 						prefix ? "pl-8" : ""
 					} ${suffix ? "pr-12" : ""} ${
@@ -74,6 +83,14 @@ export function NumberInput({
 			{error && (
 				<p id={`${name}-error`} className="text-sm text-red-600" role="alert">
 					{typeof error.message === "string" ? error.message : ""}
+				</p>
+			)}
+			{disclaimer && (
+				<p
+					id={`${name}-disclaimer`}
+					className={`text-xs text-gray-400 italic ${disabled ? "opacity-50" : ""}`}
+				>
+					{disclaimer}
 				</p>
 			)}
 		</div>

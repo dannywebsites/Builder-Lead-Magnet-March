@@ -7,6 +7,7 @@ interface SelectInputProps {
 	label: string;
 	options: Array<{ label: string; value: string }>;
 	placeholder?: string;
+	explanation?: string;
 }
 
 export function SelectInput({
@@ -14,6 +15,7 @@ export function SelectInput({
 	label,
 	options,
 	placeholder,
+	explanation,
 }: SelectInputProps) {
 	const {
 		register,
@@ -30,6 +32,9 @@ export function SelectInput({
 			>
 				{label}
 			</label>
+			{explanation && (
+				<p className="text-sm text-gray-500">{explanation}</p>
+			)}
 			<select
 				id={name}
 				aria-invalid={!!error}
