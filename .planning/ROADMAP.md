@@ -92,11 +92,11 @@ Plans:
   2. Monthly Revenue Goal (Net), Monthly Billings (Gross), and Hourly Floor Rate are displayed
   3. Sales pipeline numbers (Jobs to Win, Quotes Needed, Leads Needed) are displayed
   4. Every output value has a plain-English explanation visible to the user
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: Results page layout with financial anchor cards and pipeline section
-- [ ] 05-02: Plain-English output explanations and on-screen content split (headline vs PDF-reserved)
+- [ ] 05-01-PLAN.md — Output copy constants, test infrastructure (jsdom), CalculatorApp state orchestrator, and WizardForm callback wiring
+- [ ] 05-02-PLAN.md — ResultsView component tree (FinancialAnchorCard, PipelineMetric), CalculatorApp integration, and human verification
 
 ### Phase 6: Legal Alerts
 **Goal**: Conditional legal and tax alerts fire based on user inputs and calculation results — Gross Draw warning, Irish Two-Thirds VAT rule, efficiency cap explanation, and CIS/RCT subcontractor warning.
