@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
-import { type SubmitHandler, FormProvider, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { useQueryState, parseAsInteger } from "nuqs";
 
 import { STEP_SCHEMAS, type FormValues } from "@/lib/form/step-schemas";
@@ -42,14 +42,19 @@ export default function WizardForm() {
 		}
 	}, [step, setStep]);
 
-	const onSubmit: SubmitHandler<FormValues> = useCallback(
-		(data) => {
-			const input = transformToCalculatorInput(data);
-			const result = calculate(input);
-			console.log("Calculation result:", result);
-		},
-		[],
-	);
+	const handleCalculate = useCallback(async () => {
+		// Validate current step fields
+		const schema = STEP_SCHEMAS[3];
+		const fieldNames = Object.keys(schema.shape) as Array<keyof FormValues>;
+		const valid = await methods.trigger(fieldNames);
+		if (!valid) return;
+
+		const data = methods.getValues();
+		const input = transformToCalculatorInput(data);
+		const result = calculate(input);
+		console.log("Calculation result:", result);
+		alert(`Monthly Revenue Target: ${result.monthlyRevenueTarget}`);
+	}, [methods]);
 
 	return (
 		<div className="max-w-2xl mx-auto px-4 py-12">
@@ -64,7 +69,7 @@ export default function WizardForm() {
 			/>
 
 			<FormProvider {...methods}>
-				<form onSubmit={methods.handleSubmit(onSubmit)}>
+				<form onSubmit={(e) => e.preventDefault()}>
 					<div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mt-8">
 						{step === 0 && <StepBusinessIdentity />}
 						{step === 1 && <StepFinancials />}
@@ -95,7 +100,8 @@ export default function WizardForm() {
 								</button>
 							) : (
 								<button
-									type="submit"
+									type="button"
+									onClick={handleCalculate}
 									className="px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] bg-blue-600 text-white hover:bg-blue-700"
 								>
 									Calculate Your Numbers
