@@ -108,10 +108,10 @@ Plans:
   2. Irish Two-Thirds Rule alert triggers when VAT = 13.5% and direct cost > 66%
   3. CIS/RCT subcontractor cash flow warning is visible in results
   4. Efficiency cap explanation displays if 75% cap is relevant (always, for staff > 0)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 06-01: Alert trigger logic and alert display components on results screen
+- [ ] 06-01-PLAN.md — Alert trigger logic (TDD), copy constants, UI components, and results screen integration
 
 ### Phase 7: PDF Report Generation
 **Goal**: Client-side branded PDF report containing all financial anchors, sales pipeline targets, legal alerts, plain-English notes, and asterisk disclaimers — lazy-loaded on user action, optimized under 500KB.
