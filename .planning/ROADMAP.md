@@ -31,7 +31,7 @@ Build a client-side financial calculator that works backward from a tradesperson
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Project scaffolding (Next.js 15, TypeScript, Tailwind 4, Biome)
+- [x] 01-01: Project scaffolding (Next.js 15, TypeScript, Tailwind 4, Biome)
 - [ ] 01-02: Type definitions, Zod schemas, and currency/rounding utilities
 
 ### Phase 2: Calculation Engine

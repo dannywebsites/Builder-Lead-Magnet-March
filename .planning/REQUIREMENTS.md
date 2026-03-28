@@ -9,7 +9,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Input Form
 
-- [ ] **FORM-01**: User can select Business Entity type (Limited Company / Sole Trader)
+- [x] **FORM-01**: User can select Business Entity type (Limited Company / Sole Trader)
 - [ ] **FORM-02**: User can enter Gross Personal Draw (monthly target before personal income tax)
 - [ ] **FORM-03**: User can enter Fixed Overheads (monthly business bills: rent, insurance, software, van leases)
 - [ ] **FORM-04**: User can enter Staff Count (on-site billable employees only, excluding admin staff)
@@ -119,7 +119,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FORM-01 | Phase 1: Project Scaffolding & Type Foundation | Pending |
+| FORM-01 | Phase 1: Project Scaffolding & Type Foundation | Complete |
 | FORM-02 | Phase 3: Multi-Step Input Form | Pending |
 | FORM-03 | Phase 3: Multi-Step Input Form | Pending |
 | FORM-04 | Phase 3: Multi-Step Input Form | Pending |
