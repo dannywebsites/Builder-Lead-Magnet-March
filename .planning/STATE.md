@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-28T09:48:47.867Z"
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-28T10:06:59.870Z"
 last_activity: 2026-03-28
 progress:
   total_phases: 10
   completed_phases: 1
   total_plans: 4
-  completed_plans: 2
+  completed_plans: 3
   percent: 0
 ---
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01 P02 | 2min | 2 tasks | 7 files |
+| Phase 02 P01 | 4min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,8 @@ Recent decisions affecting current work:
 - [Roadmap]: PDF before email (gate value depends on PDF existing)
 - [Phase 01]: VatRate schema uses string enum matching HTML select; TypeScript type uses numeric literals for calculation
 - [Phase 01]: Business rules enforced at Zod schema level per D-06 (directCostPct max 0.80, staffCount nonneg int)
+- [Phase 02]: Pipeline uses unrounded MRT for derived values to avoid compounding rounding errors
+- [Phase 02]: Test expected values computed from actual JS floating point arithmetic, not hand-calculated approximations
 
 ### Pending Todos
 
@@ -77,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T09:48:47.856Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-calculation-engine/02-CONTEXT.md
+Last session: 2026-03-28T10:06:59.867Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None

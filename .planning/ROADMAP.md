@@ -48,7 +48,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Core calculation functions (tax buffer, staff cost, efficiency cap, slippage, MRT)
+- [x] 02-01: Core calculation functions (tax buffer, staff cost, efficiency cap, slippage, MRT)
 - [ ] 02-02: Sales pipeline calculations and comprehensive test suite
 
 ### Phase 3: Multi-Step Input Form

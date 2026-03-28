@@ -25,14 +25,14 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Calculation Engine
 
-- [ ] **CALC-01**: Step 1 — Tax Buffer: Ltd = Gross_Personal_Draw / 0.80; Sole Trader = Gross_Personal_Draw (no Corp Tax)
-- [ ] **CALC-02**: Step 2 — True Cost of Staff: Total_Monthly_Hours = (Staff_Count * Staff_Hours_Per_Week) * 4.33; Base_Payroll = Total_Monthly_Hours * Staff_Hourly_Rate; Adjusted_Payroll = Base_Payroll * 1.30
-- [ ] **CALC-03**: Step 3 — 75% Reality Check: Total_Billable_Hours = Total_Monthly_Hours * 0.75 (hard-capped, non-overridable)
-- [ ] **CALC-04**: Step 4 — Slippage Factor: Real_Direct_Cost = Direct_Cost_Pct * 1.15
-- [ ] **CALC-05**: Step 5 — MRT: Adjusted_Overheads = Fixed_Overheads + Adjusted_Payroll; MRT = (Target_Business_Profit + Adjusted_Overheads) / (1 - Real_Direct_Cost)
-- [ ] **CALC-06**: All calculations execute client-side with no server round-trip
+- [x] **CALC-01**: Step 1 — Tax Buffer: Ltd = Gross_Personal_Draw / 0.80; Sole Trader = Gross_Personal_Draw (no Corp Tax)
+- [x] **CALC-02**: Step 2 — True Cost of Staff: Total_Monthly_Hours = (Staff_Count * Staff_Hours_Per_Week) * 4.33; Base_Payroll = Total_Monthly_Hours * Staff_Hourly_Rate; Adjusted_Payroll = Base_Payroll * 1.30
+- [x] **CALC-03**: Step 3 — 75% Reality Check: Total_Billable_Hours = Total_Monthly_Hours * 0.75 (hard-capped, non-overridable)
+- [x] **CALC-04**: Step 4 — Slippage Factor: Real_Direct_Cost = Direct_Cost_Pct * 1.15
+- [x] **CALC-05**: Step 5 — MRT: Adjusted_Overheads = Fixed_Overheads + Adjusted_Payroll; MRT = (Target_Business_Profit + Adjusted_Overheads) / (1 - Real_Direct_Cost)
+- [x] **CALC-06**: All calculations execute client-side with no server round-trip
 - [x] **CALC-07**: Floating point precision handled correctly (currency rounding to 2 decimal places)
-- [ ] **CALC-08**: Zero-staff edge case handled gracefully (no division errors, payroll = 0)
+- [x] **CALC-08**: Zero-staff edge case handled gracefully (no division errors, payroll = 0)
 
 ### Output Report
 
@@ -132,14 +132,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FORM-11 | Phase 4: Contextual Copy & Input Guidance | Pending |
 | FORM-12 | Phase 3: Multi-Step Input Form | Pending |
 | FORM-13 | Phase 3: Multi-Step Input Form | Pending |
-| CALC-01 | Phase 2: Calculation Engine | Pending |
-| CALC-02 | Phase 2: Calculation Engine | Pending |
-| CALC-03 | Phase 2: Calculation Engine | Pending |
-| CALC-04 | Phase 2: Calculation Engine | Pending |
-| CALC-05 | Phase 2: Calculation Engine | Pending |
-| CALC-06 | Phase 2: Calculation Engine | Pending |
+| CALC-01 | Phase 2: Calculation Engine | Complete |
+| CALC-02 | Phase 2: Calculation Engine | Complete |
+| CALC-03 | Phase 2: Calculation Engine | Complete |
+| CALC-04 | Phase 2: Calculation Engine | Complete |
+| CALC-05 | Phase 2: Calculation Engine | Complete |
+| CALC-06 | Phase 2: Calculation Engine | Complete |
 | CALC-07 | Phase 1: Project Scaffolding & Type Foundation | Complete |
-| CALC-08 | Phase 2: Calculation Engine | Pending |
+| CALC-08 | Phase 2: Calculation Engine | Complete |
 | OUT-01 | Phase 5: Results Display | Pending |
 | OUT-02 | Phase 5: Results Display | Pending |
 | OUT-03 | Phase 5: Results Display | Pending |
