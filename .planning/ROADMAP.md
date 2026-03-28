@@ -124,11 +124,11 @@ Plans:
   3. PDF library is lazy-loaded (dynamic import on "Get Report" click, not in initial bundle)
   4. Generated PDF renders correctly on Chrome, Safari, Firefox, and Edge
   5. PDF file size is under 500KB
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 07-01: PDF layout template with @react-pdf/renderer (branded header, financial sections, disclaimers)
-- [ ] 07-02: Lazy-loading, cross-browser testing, and file size optimization
+- [ ] 07-01-PLAN.md — PDF component tree (@react-pdf/renderer install, branded layout, all sections, generation function, tests)
+- [ ] 07-02-PLAN.md — Download button integration (DownloadReportButton, CalculatorApp input state, ResultsView wiring, lazy loading)
 
 ### Phase 8: GDPR Compliance & Privacy Infrastructure
 **Goal**: GDPR-compliant consent mechanism, privacy policy, and cookieless analytics in place before any email is captured — this is a prerequisite for lead capture, not an afterthought.
