@@ -36,26 +36,44 @@ describe("Step1Schema", () => {
 });
 
 describe("Step2Schema", () => {
+	const validStep2 = {
+		grossPersonalDraw: 4000,
+		fixedCostVehicle: 500,
+		fixedCostPremises: 400,
+		fixedCostEquipment: 200,
+		fixedCostInsurance: 300,
+		fixedCostTechnology: 100,
+		fixedCostLoans: 200,
+		fixedCostProfessional: 150,
+		fixedCostOther: 150,
+		fixedOverheads: 2000,
+	};
+
 	it("accepts valid money fields", () => {
-		const result = Step2Schema.safeParse({
-			grossPersonalDraw: 4000,
-			fixedOverheads: 2000,
-		});
+		const result = Step2Schema.safeParse(validStep2);
 		expect(result.success).toBe(true);
 	});
 
 	it("rejects grossPersonalDraw of 0 (must be positive)", () => {
 		const result = Step2Schema.safeParse({
+			...validStep2,
 			grossPersonalDraw: 0,
-			fixedOverheads: 2000,
 		});
 		expect(result.success).toBe(false);
 	});
 
 	it("rejects negative fixedOverheads", () => {
 		const result = Step2Schema.safeParse({
-			grossPersonalDraw: 4000,
+			...validStep2,
 			fixedOverheads: -100,
+		});
+		expect(result.success).toBe(false);
+	});
+
+	it("rejects negative category values", () => {
+		const result = Step2Schema.safeParse({
+			...validStep2,
+			fixedCostVehicle: -50,
 		});
 		expect(result.success).toBe(false);
 	});

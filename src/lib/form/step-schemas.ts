@@ -13,6 +13,14 @@ export const Step1Schema = z.object({
 
 export const Step2Schema = z.object({
 	grossPersonalDraw: z.number().positive("Enter your monthly take-home target"),
+	fixedCostVehicle: z.number().nonnegative("Cannot be negative"),
+	fixedCostPremises: z.number().nonnegative("Cannot be negative"),
+	fixedCostEquipment: z.number().nonnegative("Cannot be negative"),
+	fixedCostInsurance: z.number().nonnegative("Cannot be negative"),
+	fixedCostTechnology: z.number().nonnegative("Cannot be negative"),
+	fixedCostLoans: z.number().nonnegative("Cannot be negative"),
+	fixedCostProfessional: z.number().nonnegative("Cannot be negative"),
+	fixedCostOther: z.number().nonnegative("Cannot be negative"),
 	fixedOverheads: z.number().nonnegative("Fixed costs cannot be negative"),
 });
 

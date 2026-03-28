@@ -7,6 +7,14 @@ export function transformToCalculatorInput(
 	const {
 		directCostPctDisplay,
 		vatRate,
+		fixedCostVehicle,
+		fixedCostPremises,
+		fixedCostEquipment,
+		fixedCostInsurance,
+		fixedCostTechnology,
+		fixedCostLoans,
+		fixedCostProfessional,
+		fixedCostOther,
 		...rest
 	} = form;
 

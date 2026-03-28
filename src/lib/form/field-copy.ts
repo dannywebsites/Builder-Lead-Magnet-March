@@ -19,6 +19,46 @@ export const FIELD_COPY = {
 			"The VAT rate you charge on your invoices. If you are not VAT-registered, select 0% Exempt.",
 		disclaimer: null,
 	},
+	fixedCostVehicle: {
+		explanation:
+			"Your van lease, fuel, insurance, and maintenance. If you own your van outright, include just fuel and upkeep.",
+		disclaimer: null,
+	},
+	fixedCostPremises: {
+		explanation:
+			"Rent for your workshop, yard, or storage unit. Skip this if you work from home or on-site only.",
+		disclaimer: null,
+	},
+	fixedCostEquipment: {
+		explanation:
+			"Tool hire, equipment leases, and replacement tools. The stuff that wears out or needs replacing.",
+		disclaimer: null,
+	},
+	fixedCostInsurance: {
+		explanation:
+			"Public liability, professional indemnity, employer liability, and any other business insurance premiums.",
+		disclaimer: null,
+	},
+	fixedCostTechnology: {
+		explanation:
+			"Software subscriptions, phone contracts, and IT costs. Think accounting software, project management tools, and your work phone.",
+		disclaimer: null,
+	},
+	fixedCostLoans: {
+		explanation:
+			"Business loan repayments, equipment finance, and any other regular debt payments the business owes.",
+		disclaimer: null,
+	},
+	fixedCostProfessional: {
+		explanation:
+			"Your accountant, bookkeeper, legal fees, and any professional memberships or trade body subscriptions.",
+		disclaimer: null,
+	},
+	fixedCostOther: {
+		explanation:
+			"Anything else the business pays monthly that does not fit above -- uniforms, marketing, training, waste disposal contracts.",
+		disclaimer: null,
+	},
 	grossPersonalDraw: {
 		explanation:
 			"What you want to take home each month, before your personal income tax. This is your pay after the business has covered all its costs. Most tradespeople target between 3,000 and 6,000 per month.",
