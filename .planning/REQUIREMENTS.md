@@ -36,14 +36,14 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Output Report
 
-- [ ] **OUT-01**: Display Monthly Revenue Goal (Net) = MRT
-- [ ] **OUT-02**: Display Monthly Billings (Gross) = MRT * (1 + VAT_Rate)
-- [ ] **OUT-03**: Display Hourly Floor Rate = MRT / Total_Billable_Hours
-- [ ] **OUT-04**: Display Jobs to Win = MRT / Avg_Job_Value
-- [ ] **OUT-05**: Display Quotes Needed = Jobs_to_Win / 0.30 (assumes 30% win rate)
-- [ ] **OUT-06**: Display Leads Needed = Quotes_Needed / 0.30 (assumes 30% conversion)
-- [ ] **OUT-07**: Every output displays a plain-English note explaining what it means
-- [ ] **OUT-08**: Results display instantly on-screen after calculation (no page reload)
+- [x] **OUT-01**: Display Monthly Revenue Goal (Net) = MRT
+- [x] **OUT-02**: Display Monthly Billings (Gross) = MRT * (1 + VAT_Rate)
+- [x] **OUT-03**: Display Hourly Floor Rate = MRT / Total_Billable_Hours
+- [x] **OUT-04**: Display Jobs to Win = MRT / Avg_Job_Value
+- [x] **OUT-05**: Display Quotes Needed = Jobs_to_Win / 0.30 (assumes 30% win rate)
+- [x] **OUT-06**: Display Leads Needed = Quotes_Needed / 0.30 (assumes 30% conversion)
+- [x] **OUT-07**: Every output displays a plain-English note explaining what it means
+- [x] **OUT-08**: Results display instantly on-screen after calculation (no page reload)
 
 ### Legal Alerts
 
@@ -140,14 +140,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CALC-06 | Phase 2: Calculation Engine | Complete |
 | CALC-07 | Phase 1: Project Scaffolding & Type Foundation | Complete |
 | CALC-08 | Phase 2: Calculation Engine | Complete |
-| OUT-01 | Phase 5: Results Display | Pending |
-| OUT-02 | Phase 5: Results Display | Pending |
-| OUT-03 | Phase 5: Results Display | Pending |
-| OUT-04 | Phase 5: Results Display | Pending |
-| OUT-05 | Phase 5: Results Display | Pending |
-| OUT-06 | Phase 5: Results Display | Pending |
-| OUT-07 | Phase 5: Results Display | Pending |
-| OUT-08 | Phase 5: Results Display | Pending |
+| OUT-01 | Phase 5: Results Display | Complete |
+| OUT-02 | Phase 5: Results Display | Complete |
+| OUT-03 | Phase 5: Results Display | Complete |
+| OUT-04 | Phase 5: Results Display | Complete |
+| OUT-05 | Phase 5: Results Display | Complete |
+| OUT-06 | Phase 5: Results Display | Complete |
+| OUT-07 | Phase 5: Results Display | Complete |
+| OUT-08 | Phase 5: Results Display | Complete |
 | ALRT-01 | Phase 6: Legal Alerts | Pending |
 | ALRT-02 | Phase 6: Legal Alerts | Pending |
 | ALRT-03 | Phase 6: Legal Alerts | Pending |

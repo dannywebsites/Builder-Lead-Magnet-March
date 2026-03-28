@@ -95,7 +95,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Output copy constants, test infrastructure (jsdom), CalculatorApp state orchestrator, and WizardForm callback wiring
+- [x] 05-01-PLAN.md — Output copy constants, test infrastructure (jsdom), CalculatorApp state orchestrator, and WizardForm callback wiring
 - [ ] 05-02-PLAN.md — ResultsView component tree (FinancialAnchorCard, PipelineMetric), CalculatorApp integration, and human verification
 
 ### Phase 6: Legal Alerts
