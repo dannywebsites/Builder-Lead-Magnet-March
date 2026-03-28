@@ -45,7 +45,7 @@ Plans:
   3. 75% efficiency cap is hard-coded and non-overridable in the engine
   4. 15% slippage factor applied correctly to direct cost percentage
   5. Full unit test suite passes covering all formula steps, both entity types, and edge cases
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
 - [ ] 02-01: Core calculation functions (tax buffer, staff cost, efficiency cap, slippage, MRT)
