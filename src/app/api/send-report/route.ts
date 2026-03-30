@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { ResultsSummaryEmail } from "@/lib/email/templates/ResultsSummaryEmail";
 import { sendReportRequestSchema } from "@/lib/email/schema";
-import type { CalculatorInput, CalculatorOutput, Currency } from "@/lib/calculator/types";
-import type { Alert } from "@/lib/calculator/alerts";
 
 function getResend() {
 	return new Resend(process.env.RESEND_API_KEY);
@@ -32,13 +30,12 @@ export async function POST(request: Request) {
 			);
 		}
 
-		// Cast the loosely-typed schema data back to proper types for the template
 		const templateProps = {
 			name,
-			input: calculatorInput as unknown as CalculatorInput,
-			output: calculatorOutput as unknown as CalculatorOutput,
-			currency: currency as Currency,
-			alerts: alerts as unknown as Alert[],
+			input: calculatorInput,
+			output: calculatorOutput,
+			currency,
+			alerts,
 		};
 
 		// LEAD-05: Send branded results summary email via Resend

@@ -24,6 +24,39 @@ vi.mock("@/lib/email/templates/ResultsSummaryEmail", () => ({
 	ResultsSummaryEmail: vi.fn().mockReturnValue("mock-email-html"),
 }));
 
+// Valid fixture matching strict Zod schemas
+const validCalculatorInput = {
+	entityType: "limited_company" as const,
+	grossPersonalDraw: 3500,
+	fixedOverheads: 1200,
+	staffCount: 2,
+	staffHourlyRate: 15,
+	staffHoursPerWeek: 40,
+	avgJobValue: 2500,
+	directCostPct: 0.35,
+	vatRate: 0.2 as const,
+	currency: "GBP" as const,
+	ownerHoursPerWeek: 45,
+};
+
+const validCalculatorOutput = {
+	monthlyRevenueTarget: 12000,
+	monthlyBillings: 14400,
+	hourlyFloorRate: 45,
+	jobsToWin: 5,
+	quotesNeeded: 10,
+	leadsNeeded: 20,
+	targetBusinessProfit: 5000,
+	adjustedPayroll: 3200,
+	totalBillableHours: 160,
+	realDirectCost: 4200,
+	adjustedOverheads: 1440,
+	taxBufferAmount: 2400,
+	basePayroll: 2600,
+	employerBurdenAmount: 600,
+	marginAfterMaterials: 7800,
+};
+
 describe("POST /api/send-report", () => {
 	beforeEach(() => {
 		vi.stubEnv("RESEND_API_KEY", "re_test_key");
@@ -48,10 +81,11 @@ describe("POST /api/send-report", () => {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
+				name: "Test User",
 				email: "test@example.com",
 				consent: false,
-				calculatorInput: {},
-				calculatorOutput: {},
+				calculatorInput: validCalculatorInput,
+				calculatorOutput: validCalculatorOutput,
 				currency: "GBP",
 				alerts: [],
 			}),
@@ -66,10 +100,11 @@ describe("POST /api/send-report", () => {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
+				name: "Test User",
 				email: "test@example.com",
 				consent: true,
-				calculatorInput: { entityType: "ltd" },
-				calculatorOutput: { monthlyRevenueTarget: 8000 },
+				calculatorInput: validCalculatorInput,
+				calculatorOutput: validCalculatorOutput,
 				currency: "GBP",
 				alerts: [],
 			}),
