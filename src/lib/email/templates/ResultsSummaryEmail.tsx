@@ -179,6 +179,11 @@ export function ResultsSummaryEmail({
 					<Text style={styles.footerText}>
 						Insulate Market — Helping tradespeople price with confidence
 					</Text>
+					<Text style={styles.footerContact}>
+						<a href="mailto:info@insulatemarket.com" style={styles.footerLink}>
+							info@insulatemarket.com
+						</a>
+					</Text>
 				</Container>
 			</Body>
 		</Html>
@@ -352,5 +357,13 @@ const styles = {
 		color: SLATE_500,
 		fontSize: "12px",
 		margin: "0",
+	},
+	footerContact: {
+		margin: "8px 0 0",
+		fontSize: "12px",
+	},
+	footerLink: {
+		color: BRAND,
+		textDecoration: "none",
 	},
 };

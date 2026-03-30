@@ -101,18 +101,10 @@ export function EmailCaptureModal({
 		} else {
 			setApiError(
 				result.error ||
-					"Failed to send email. You can still download your report below.",
+					"Failed to send email. Please try again.",
 			);
 		}
 	};
-
-	async function handleFallbackDownload() {
-		const { generateAndDownloadReport } = await import(
-			"@/lib/pdf/generate-report"
-		);
-		await generateAndDownloadReport(input, output, currency, alerts);
-		onClose();
-	}
 
 	const { ref: nameFormRef, ...nameRegister } = register("name");
 
@@ -137,6 +129,12 @@ export function EmailCaptureModal({
 				>
 					&#x00D7;
 				</button>
+
+				<img
+					src="/insulate-market-logo.jpg"
+					alt="Insulate Market"
+					className="h-10 w-auto mx-auto mb-4"
+				/>
 
 				<h2 className="text-xl font-bold text-slate-900 mb-2">
 					Get Your Trade Survival Report
@@ -207,15 +205,6 @@ export function EmailCaptureModal({
 						{isSubmitting ? "Sending..." : "Send My Report"}
 					</button>
 
-					{apiError && (
-						<button
-							type="button"
-							onClick={handleFallbackDownload}
-							className="w-full text-sm text-[var(--brand)] hover:underline"
-						>
-							Download Report Without Email
-						</button>
-					)}
 				</form>
 			</div>
 		</div>
