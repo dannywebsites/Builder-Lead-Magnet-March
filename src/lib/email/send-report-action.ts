@@ -6,6 +6,7 @@ import type {
 import type { Alert } from "@/lib/calculator/alerts";
 
 interface SendReportPayload {
+	name: string;
 	email: string;
 	consent: true;
 	calculatorInput: CalculatorInput;

@@ -33,7 +33,7 @@ export function EmailCaptureModal({
 	alerts,
 }: EmailCaptureModalProps) {
 	const [apiError, setApiError] = useState<string | null>(null);
-	const emailRef = useRef<HTMLInputElement | null>(null);
+	const nameRef = useRef<HTMLInputElement | null>(null);
 
 	const {
 		register,
@@ -44,6 +44,7 @@ export function EmailCaptureModal({
 	} = useForm<EmailCaptureData>({
 		resolver: zodResolver(emailCaptureSchema),
 		defaultValues: {
+			name: "",
 			email: "",
 			consent: false as unknown as true,
 		},
@@ -61,10 +62,10 @@ export function EmailCaptureModal({
 		return () => document.removeEventListener("keydown", handleKeyDown);
 	}, [isOpen, onClose]);
 
-	// Auto-focus email input on open
+	// Auto-focus name input on open
 	useEffect(() => {
-		if (isOpen && emailRef.current) {
-			emailRef.current.focus();
+		if (isOpen && nameRef.current) {
+			nameRef.current.focus();
 		}
 	}, [isOpen]);
 
@@ -81,6 +82,7 @@ export function EmailCaptureModal({
 	const onSubmit = async (formData: EmailCaptureData) => {
 		setApiError(null);
 		const result = await sendReport({
+			name: formData.name,
 			email: formData.email,
 			consent: formData.consent,
 			calculatorInput: input,
@@ -112,7 +114,7 @@ export function EmailCaptureModal({
 		onClose();
 	}
 
-	const { ref: formRef, ...emailRegister } = register("email");
+	const { ref: nameFormRef, ...nameRegister } = register("name");
 
 	return (
 		<div
@@ -140,22 +142,37 @@ export function EmailCaptureModal({
 					Get Your Trade Survival Report
 				</h2>
 				<p className="text-sm text-slate-500 mb-6">
-					Enter your email and we'll send you a summary plus your
+					Enter your details and we'll send you a summary plus your
 					downloadable report.
 				</p>
 
 				<form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 					<div>
 						<input
+							type="text"
+							aria-label="Your name"
+							placeholder="Your name"
+							className="w-full px-3 py-3 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand)] focus:border-transparent"
+							{...nameRegister}
+							ref={(e) => {
+								nameFormRef(e);
+								nameRef.current = e;
+							}}
+						/>
+						{errors.name && (
+							<p className="text-sm text-red-600 mt-1" role="alert">
+								{errors.name.message}
+							</p>
+						)}
+					</div>
+
+					<div>
+						<input
 							type="email"
 							aria-label="Email address"
 							placeholder="your@email.com"
 							className="w-full px-3 py-3 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand)] focus:border-transparent"
-							{...emailRegister}
-							ref={(e) => {
-								formRef(e);
-								emailRef.current = e;
-							}}
+							{...register("email")}
 						/>
 						{errors.email && (
 							<p className="text-sm text-red-600 mt-1" role="alert">
