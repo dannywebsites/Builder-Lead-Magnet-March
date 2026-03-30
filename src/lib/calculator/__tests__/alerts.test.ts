@@ -32,6 +32,10 @@ function makeOutput(): CalculatorOutput {
 		totalBillableHours: 160,
 		realDirectCost: 0.3,
 		adjustedOverheads: 500,
+		taxBufferAmount: 1000,
+		basePayroll: 0,
+		employerBurdenAmount: 0,
+		marginAfterMaterials: 0.7,
 	};
 }
 

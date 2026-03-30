@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Footer() {
 	return (
-		<footer className="mt-auto border-t border-gray-200 py-6 px-4 text-center text-sm text-gray-500">
+		<footer className="mt-auto border-t border-slate-200 py-8 px-4 text-center text-sm text-slate-400">
 			<Link href="/privacy" className="hover:underline">
 				Privacy Policy
 			</Link>

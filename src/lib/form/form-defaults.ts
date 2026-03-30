@@ -17,6 +17,7 @@ export const FORM_DEFAULTS: FormValues = {
 	staffCount: 0,
 	staffHourlyRate: 0,
 	staffHoursPerWeek: 0,
+	ownerHoursPerWeek: 40,
 	avgJobValue: 0,
 	directCostPctDisplay: 0,
 };

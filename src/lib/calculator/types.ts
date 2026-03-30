@@ -30,6 +30,7 @@ export interface CalculatorInput {
 	directCostPct: number;
 	vatRate: VatRateValue;
 	currency: Currency;
+	ownerHoursPerWeek?: number;
 }
 
 /** Calculated output results */
@@ -45,4 +46,8 @@ export interface CalculatorOutput {
 	totalBillableHours: number;
 	realDirectCost: number;
 	adjustedOverheads: number;
+	taxBufferAmount: number;
+	basePayroll: number;
+	employerBurdenAmount: number;
+	marginAfterMaterials: number;
 }

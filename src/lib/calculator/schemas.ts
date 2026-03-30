@@ -17,6 +17,7 @@ export const CalculatorInputSchema = z.object({
 	directCostPct: z.number().min(0).max(0.8),
 	vatRate: VatRateSchema,
 	currency: CurrencySchema,
+	ownerHoursPerWeek: z.number().nonnegative().max(168).optional(),
 });
 
 export type ValidatedCalculatorInput = z.infer<typeof CalculatorInputSchema>;

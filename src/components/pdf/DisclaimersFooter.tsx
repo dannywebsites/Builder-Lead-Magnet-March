@@ -4,40 +4,23 @@ import { reportStyles } from "./report-styles";
 export function DisclaimersFooter() {
 	return (
 		<View style={reportStyles.footer}>
-			<Text style={reportStyles.sectionTitle}>Notes and Disclaimers</Text>
+			<Text style={reportStyles.sectionTitle}>Important Notes</Text>
 
 			<Text style={reportStyles.disclaimer}>
-				* The 30% employer burden is a conservative buffer covering employer
-				NICs, pension contributions, and employment overheads. Actual costs vary
-				by jurisdiction and benefit structure.
+				All buffers used in this report (20% Corporation Tax, 30% employer
+				burden, 75% billable efficiency cap, 15% material slippage, 30% win
+				rate, 30% lead-to-quote rate) are conservative estimates designed to
+				protect your margin. Actual rates vary by jurisdiction and business.
 			</Text>
 
 			<Text style={reportStyles.disclaimer}>
-				* The Corp Tax buffer (20%) is applied to Limited Company figures only.
-				This is not a precise tax calculation -- it protects against the common
-				mistake of spending pre-tax profits.
-			</Text>
-
-			<Text style={reportStyles.disclaimer}>
-				* Billable hours are capped at 75% of contracted hours. This accounts
-				for travel, admin, callbacks, weather delays, and other non-billable
-				time.
-			</Text>
-
-			<Text style={reportStyles.disclaimer}>
-				* A 15% slippage factor is applied to direct costs to protect against
-				underquoting materials, fuel price increases, and disposal cost
-				surprises.
-			</Text>
-
-			<Text style={reportStyles.disclaimer}>
-				* Win rate (30%) and lead-to-quote rate (30%) are conservative industry
-				averages. Your actual rates may differ.
+				Win rate and lead-to-quote rate are industry averages. Your actual
+				conversion rates may differ -- adjust your pipeline targets accordingly.
 			</Text>
 
 			<Text style={reportStyles.footerGeneral}>
 				These figures use conservative buffers, not precise statutory rates.
-				Always consult a qualified accountant.
+				Always consult a qualified accountant for tax and compliance matters.
 			</Text>
 		</View>
 	);

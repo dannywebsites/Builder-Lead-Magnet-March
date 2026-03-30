@@ -65,13 +65,13 @@ export function NumberInput({
 					step={step}
 					aria-invalid={!!error}
 					aria-describedby={[error ? `${name}-error` : "", disclaimer ? `${name}-disclaimer` : ""].filter(Boolean).join(" ") || undefined}
-					className={`w-full rounded-lg border px-3 py-3 min-h-[44px] bg-white focus:outline-none focus:ring-2 ${
+					className={`w-full rounded-lg border px-3 py-3 min-h-[44px] bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:border-transparent ${
 						prefix ? "pl-8" : ""
 					} ${suffix ? "pr-12" : ""} ${
 						error
 							? "border-red-500 focus:ring-red-500"
-							: "border-gray-300 focus:ring-blue-500"
-					} ${disabled ? "opacity-50 cursor-not-allowed bg-gray-50" : ""}`}
+							: "border-slate-300 focus:ring-[var(--brand)]"
+					} ${disabled ? "opacity-50 cursor-not-allowed bg-slate-50" : ""}`}
 					{...register(name, { valueAsNumber: true })}
 				/>
 				{suffix && (

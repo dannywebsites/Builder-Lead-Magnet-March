@@ -5,6 +5,7 @@ import { InputSummary } from "./InputSummary";
 import { FinancialAnchorsSection } from "./FinancialAnchorsSection";
 import { AlertsSection } from "./AlertsSection";
 import { PipelineSection } from "./PipelineSection";
+import { CalculationBreakdownSection } from "./CalculationBreakdownSection";
 import { DisclaimersFooter } from "./DisclaimersFooter";
 import type { CalculatorInput, CalculatorOutput, Currency } from "@/lib/calculator/types";
 import type { Alert } from "@/lib/calculator/alerts";
@@ -31,6 +32,11 @@ export function TradeSurvivalReport({
 					output={output}
 					currency={currency}
 					staffCount={input.staffCount}
+				/>
+				<CalculationBreakdownSection
+					input={input}
+					output={output}
+					currency={currency}
 				/>
 				{alerts.length > 0 && <AlertsSection alerts={alerts} />}
 				<PipelineSection output={output} />

@@ -70,6 +70,12 @@ export const FIELD_COPY = {
 			"On-site billable staff only -- the people doing chargeable work. Do not count office or admin staff here. Enter 0 if you work solo.",
 		disclaimer: null,
 	},
+	ownerHoursPerWeek: {
+		explanation:
+			"How many hours per week you personally spend on billable, chargeable work. Travel, admin, and quoting do not count. Most solo tradespeople are on-site 30 to 45 hours per week.",
+		disclaimer:
+			"* We apply a 75% efficiency cap. Nobody bills 100% of their hours -- travel, weather, callbacks, and admin eat into your day.",
+	},
 	staffHourlyRate: {
 		explanation:
 			"The average gross hourly rate you pay your on-site staff, per their employment contract. Most trades pay between 12 and 25 per hour.",

@@ -39,10 +39,10 @@ export function SelectInput({
 				id={name}
 				aria-invalid={!!error}
 				aria-describedby={error ? `${name}-error` : undefined}
-				className={`w-full rounded-lg border px-3 py-3 min-h-[44px] bg-white focus:outline-none focus:ring-2 ${
+				className={`w-full rounded-lg border px-3 py-3 min-h-[44px] bg-white text-slate-900 focus:outline-none focus:ring-2 focus:border-transparent ${
 					error
 						? "border-red-500 focus:ring-red-500"
-						: "border-gray-300 focus:ring-blue-500"
+						: "border-slate-300 focus:ring-[var(--brand)]"
 				}`}
 				{...register(name)}
 			>

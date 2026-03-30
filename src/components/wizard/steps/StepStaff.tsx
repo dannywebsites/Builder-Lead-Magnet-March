@@ -23,8 +23,14 @@ export function StepStaff() {
 	return (
 		<div className="flex flex-col gap-4">
 			<div>
-				<h2 className="text-2xl font-semibold text-foreground">Your Team</h2>
-				<p className="text-base text-gray-500 mt-1">Staff costs -- skip if you work solo</p>
+				<h2 className="text-2xl font-semibold text-foreground">
+					{isStaffDisabled ? "Your Hours" : "Your Team"}
+				</h2>
+				<p className="text-base text-gray-500 mt-1">
+					{isStaffDisabled
+						? "How many hours you spend on billable work each week"
+						: "Staff costs and working hours"}
+				</p>
 			</div>
 			<NumberInput
 				name="staffCount"
@@ -34,29 +40,43 @@ export function StepStaff() {
 				step="1"
 				explanation={FIELD_COPY.staffCount.explanation}
 			/>
-			<NumberInput
-				name="staffHourlyRate"
-				label="Staff Hourly Rate"
-				prefix={currencySymbol}
-				placeholder="e.g. 15"
-				disabled={isStaffDisabled}
-				min={0}
-				step="0.01"
-				explanation={FIELD_COPY.staffHourlyRate.explanation}
-				disclaimer={FIELD_COPY.staffHourlyRate.disclaimer ?? undefined}
-			/>
-			<NumberInput
-				name="staffHoursPerWeek"
-				label="Staff Hours Per Week"
-				suffix="hrs"
-				placeholder="e.g. 40"
-				disabled={isStaffDisabled}
-				min={0}
-				max={168}
-				step="0.5"
-				explanation={FIELD_COPY.staffHoursPerWeek.explanation}
-				disclaimer={FIELD_COPY.staffHoursPerWeek.disclaimer ?? undefined}
-			/>
+			{isStaffDisabled ? (
+				<NumberInput
+					name="ownerHoursPerWeek"
+					label="Your Billable Hours Per Week"
+					suffix="hrs"
+					placeholder="e.g. 40"
+					min={0}
+					max={168}
+					step="0.5"
+					explanation={FIELD_COPY.ownerHoursPerWeek.explanation}
+					disclaimer={FIELD_COPY.ownerHoursPerWeek.disclaimer ?? undefined}
+				/>
+			) : (
+				<>
+					<NumberInput
+						name="staffHourlyRate"
+						label="Staff Hourly Rate"
+						prefix={currencySymbol}
+						placeholder="e.g. 15"
+						min={0}
+						step="0.01"
+						explanation={FIELD_COPY.staffHourlyRate.explanation}
+						disclaimer={FIELD_COPY.staffHourlyRate.disclaimer ?? undefined}
+					/>
+					<NumberInput
+						name="staffHoursPerWeek"
+						label="Staff Hours Per Week"
+						suffix="hrs"
+						placeholder="e.g. 40"
+						min={0}
+						max={168}
+						step="0.5"
+						explanation={FIELD_COPY.staffHoursPerWeek.explanation}
+						disclaimer={FIELD_COPY.staffHoursPerWeek.disclaimer ?? undefined}
+					/>
+				</>
+			)}
 		</div>
 	);
 }

@@ -6,7 +6,7 @@ interface AlertCardProps {
 
 export function AlertCard({ alert }: AlertCardProps) {
 	return (
-		<div className="rounded-xl border border-amber-300 bg-amber-50 p-6">
+		<div className="rounded-2xl border border-amber-200 bg-amber-50/80 p-5">
 			<div className="flex items-start gap-3">
 				<svg
 					className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-600"

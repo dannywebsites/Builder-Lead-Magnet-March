@@ -69,7 +69,7 @@ export default function WizardForm({ onCalculated }: WizardFormProps) {
 	}, [methods, onCalculated]);
 
 	return (
-		<div className="max-w-2xl mx-auto px-4 py-12">
+		<div className="max-w-2xl mx-auto px-4 pb-12">
 			<WizardProgress
 				currentStep={step}
 				totalSteps={4}
@@ -82,19 +82,19 @@ export default function WizardForm({ onCalculated }: WizardFormProps) {
 
 			<FormProvider {...methods}>
 				<form onSubmit={(e) => e.preventDefault()}>
-					<div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mt-8">
+					<div className="bg-white rounded-2xl shadow-lg border border-slate-200/60 p-8 mt-6">
 						{step === 0 && <StepBusinessIdentity />}
 						{step === 1 && <StepFinancials />}
 						{step === 2 && <StepStaff />}
 						{step === 3 && <StepJobPricing />}
 
 						{/* Navigation buttons */}
-						<div className="flex justify-between mt-8">
+						<div className="flex justify-between mt-8 pt-6 border-t border-slate-100">
 							{step > 0 ? (
 								<button
 									type="button"
 									onClick={handleBack}
-									className="px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] text-gray-600 hover:text-foreground"
+									className="px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] text-slate-500 hover:text-slate-900 hover:bg-slate-50 transition-colors"
 								>
 									Back
 								</button>
@@ -106,7 +106,7 @@ export default function WizardForm({ onCalculated }: WizardFormProps) {
 								<button
 									type="button"
 									onClick={handleNext}
-									className="px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] bg-blue-600 text-white hover:bg-blue-700"
+									className="px-6 py-3 rounded-xl text-base font-semibold min-h-[44px] bg-[var(--brand)] text-white hover:bg-[var(--brand-hover)] shadow-sm transition-colors"
 								>
 									Next Step
 								</button>
@@ -114,7 +114,7 @@ export default function WizardForm({ onCalculated }: WizardFormProps) {
 								<button
 									type="button"
 									onClick={handleCalculate}
-									className="px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] bg-blue-600 text-white hover:bg-blue-700"
+									className="px-8 py-3 rounded-xl text-base font-bold min-h-[44px] bg-[var(--brand)] text-white hover:bg-[var(--brand-hover)] shadow-md hover:shadow-lg transition-all"
 								>
 									Calculate Your Numbers
 								</button>

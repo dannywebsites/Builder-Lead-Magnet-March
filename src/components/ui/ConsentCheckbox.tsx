@@ -22,13 +22,13 @@ export function ConsentCheckbox({
 					name="consent"
 					checked={checked}
 					onChange={(e) => onChange(e.target.checked)}
-					className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+					className="mt-1 h-4 w-4 rounded border-gray-300 text-[var(--brand)] focus:ring-[var(--brand)]"
 				/>
 				<span className="text-sm text-gray-700">
 					I agree to receive my report and occasional tips by email. See our{" "}
 					<Link
 						href="/privacy"
-						className="text-blue-600 hover:underline"
+						className="text-[var(--brand)] hover:underline"
 						target="_blank"
 					>
 						Privacy Policy

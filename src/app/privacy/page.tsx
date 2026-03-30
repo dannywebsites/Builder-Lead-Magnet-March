@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
 	return (
 		<main className="max-w-2xl mx-auto px-4 py-12">
-			<Link href="/" className="text-blue-600 hover:underline text-sm">
+			<Link href="/" className="text-[var(--brand)] hover:underline text-sm">
 				&larr; Back to calculator
 			</Link>
 

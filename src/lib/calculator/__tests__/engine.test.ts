@@ -215,4 +215,67 @@ describe("calculate", () => {
 			expect(Number.isFinite(value)).toBe(true);
 		}
 	});
+
+	it("calculates billable hours from ownerHoursPerWeek when staffCount=0", () => {
+		const soloInput: CalculatorInput = {
+			entityType: "sole_trader",
+			grossPersonalDraw: 3000,
+			fixedOverheads: 500,
+			staffCount: 0,
+			staffHourlyRate: 0,
+			staffHoursPerWeek: 0,
+			avgJobValue: 1000,
+			directCostPct: 0.3,
+			vatRate: 0.2,
+			currency: "GBP",
+			ownerHoursPerWeek: 40,
+		};
+		const result = calculate(soloInput);
+
+		// ownerMonthlyHours = 40 * 4.33 = 173.2
+		// totalBillableHours = 173.2 * 0.75 = 129.9
+		expect(result.totalBillableHours).toBe(129.9);
+		expect(result.hourlyFloorRate).toBeGreaterThan(0);
+
+		// hourlyFloorRate = MRT / 129.9
+		// MRT = 5343.51 (same as zero-staff test)
+		expect(result.hourlyFloorRate).toBeCloseTo(5343.51 / 129.9, 1);
+	});
+
+	it("ignores ownerHoursPerWeek when staffCount > 0", () => {
+		const inputWithOwnerHours: CalculatorInput = {
+			...ltdInput,
+			ownerHoursPerWeek: 40,
+		};
+		const result = calculate(inputWithOwnerHours);
+		const resultWithout = calculate(ltdInput);
+
+		// Should use staff hours, not owner hours
+		expect(result.totalBillableHours).toBe(resultWithout.totalBillableHours);
+	});
+
+	it("emits correct breakdown intermediates", () => {
+		const result = calculate(ltdInput);
+
+		// taxBufferAmount = targetBusinessProfit - grossPersonalDraw = 5000 - 4000 = 1000
+		expect(result.taxBufferAmount).toBe(1000);
+
+		// basePayroll = 2 * 40 * 4.33 * 15 = 5196
+		expect(result.basePayroll).toBe(5196);
+
+		// employerBurdenAmount = adjustedPayroll - basePayroll = 6754.8 - 5196 = 1558.8
+		expect(result.employerBurdenAmount).toBe(1558.8);
+
+		// marginAfterMaterials = 1 - 0.2875 = 0.7125
+		expect(result.marginAfterMaterials).toBeCloseTo(0.7125, 10);
+	});
+
+	it("emits zero taxBufferAmount for sole trader", () => {
+		const soleTraderInput: CalculatorInput = {
+			...ltdInput,
+			entityType: "sole_trader",
+		};
+		const result = calculate(soleTraderInput);
+		expect(result.taxBufferAmount).toBe(0);
+	});
 });

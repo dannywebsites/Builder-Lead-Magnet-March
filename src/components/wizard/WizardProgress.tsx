@@ -32,15 +32,15 @@ export function WizardProgress({
 									}
 								}}
 								disabled={!isCompleted}
-								className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
+								className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold transition-all ${
 									isCompleted
-										? "bg-blue-600 text-white cursor-pointer hover:bg-blue-700"
+										? "bg-[var(--brand)] text-white cursor-pointer hover:bg-[var(--brand-hover)] shadow-sm"
 										: ""
 								} ${
-									isCurrent ? "ring-2 ring-blue-600 text-blue-600 bg-white" : ""
+									isCurrent ? "ring-2 ring-[var(--brand)] text-[var(--brand)] bg-white shadow-sm" : ""
 								} ${
 									isUpcoming
-										? "bg-gray-200 text-gray-400 cursor-default"
+										? "bg-slate-200 text-slate-400 cursor-default"
 										: ""
 								}`}
 								aria-label={`Step ${i + 1}: ${STEP_LABELS[i]}${isCompleted ? " (completed)" : isCurrent ? " (current)" : ""}`}
@@ -62,7 +62,7 @@ export function WizardProgress({
 						{i < totalSteps - 1 && (
 							<div
 								className={`mx-2 h-0.5 flex-1 ${
-									i < currentStep ? "bg-blue-600" : "bg-gray-200"
+									i < currentStep ? "bg-[var(--brand)]" : "bg-slate-200"
 								}`}
 							/>
 						)}

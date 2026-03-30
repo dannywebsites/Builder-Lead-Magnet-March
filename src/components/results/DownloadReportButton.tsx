@@ -29,7 +29,7 @@ export function DownloadReportButton({
 			<button
 				type="button"
 				onClick={() => setShowModal(true)}
-				className="w-full sm:w-auto px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+				className="w-full sm:w-auto px-8 py-3 rounded-xl text-base font-bold min-h-[44px] bg-[var(--brand)] text-white hover:bg-[var(--brand-hover)] shadow-md hover:shadow-lg transition-all"
 			>
 				Get Your Trade Survival Report
 			</button>

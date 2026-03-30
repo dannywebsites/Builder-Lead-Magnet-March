@@ -67,14 +67,20 @@ export function calculate(input: CalculatorInput): CalculatorOutput {
 	const targetBusinessProfit = calculateTaxBuffer(input.entityType, input.grossPersonalDraw);
 
 	// Step 2: Staff cost
-	const { totalMonthlyHours, adjustedPayroll } = calculateStaffCost(
+	const { totalMonthlyHours, basePayroll, adjustedPayroll } = calculateStaffCost(
 		input.staffCount,
 		input.staffHourlyRate,
 		input.staffHoursPerWeek,
 	);
 
 	// Step 3: Billable hours
-	const totalBillableHours = calculateBillableHours(totalMonthlyHours);
+	let totalBillableHours: number;
+	if (input.staffCount === 0 && input.ownerHoursPerWeek) {
+		const ownerMonthlyHours = input.ownerHoursPerWeek * BUSINESS_RULES.WEEKS_PER_MONTH;
+		totalBillableHours = calculateBillableHours(ownerMonthlyHours);
+	} else {
+		totalBillableHours = calculateBillableHours(totalMonthlyHours);
+	}
 
 	// Step 4: Slippage
 	const realDirectCost = calculateSlippage(input.directCostPct);
@@ -108,5 +114,9 @@ export function calculate(input: CalculatorInput): CalculatorOutput {
 		totalBillableHours: roundCurrency(totalBillableHours),
 		realDirectCost,
 		adjustedOverheads: roundCurrency(adjustedOverheads),
+		taxBufferAmount: roundCurrency(targetBusinessProfit - input.grossPersonalDraw),
+		basePayroll: roundCurrency(basePayroll),
+		employerBurdenAmount: roundCurrency(adjustedPayroll - basePayroll),
+		marginAfterMaterials: 1 - realDirectCost,
 	};
 }

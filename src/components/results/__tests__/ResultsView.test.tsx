@@ -57,6 +57,10 @@ const MOCK_OUTPUT: CalculatorOutput = {
 	totalBillableHours: 325,
 	realDirectCost: 0.4025,
 	adjustedOverheads: 4800,
+	taxBufferAmount: 1000,
+	basePayroll: 2153.85,
+	employerBurdenAmount: 646.15,
+	marginAfterMaterials: 0.5975,
 };
 
 const defaultInput: CalculatorInput = {
@@ -118,24 +122,24 @@ describe("ResultsView", () => {
 		expect(screen.getByText("Leads to Generate")).toBeTruthy();
 	});
 
-	it("shows explanation for every output value (OUT-07)", () => {
+	it("shows dynamic explanation for every output value (OUT-07)", () => {
 		render(<ResultsView {...defaultProps} />);
-		expect(screen.getByText(/minimum your business needs/)).toBeTruthy();
-		expect(screen.getByText(/needs to land in your bank/)).toBeTruthy();
-		expect(screen.getByText(/absolute minimum you should charge/)).toBeTruthy();
-		expect(screen.getByText(/how many jobs you need/)).toBeTruthy();
-		expect(screen.getByText(/quotes you need to get out/)).toBeTruthy();
-		expect(screen.getByText(/leads or enquiries you need/)).toBeTruthy();
+		expect(screen.getByText(/take-home plus/)).toBeTruthy();
+		expect(screen.getByText(/revenue goal with/)).toBeTruthy();
+		expect(screen.getByText(/billable hours per month/)).toBeTruthy();
+		expect(screen.getByText(/average job value/)).toBeTruthy();
+		expect(screen.getByText(/jobs divided by a 30% win rate/)).toBeTruthy();
+		expect(screen.getByText(/quotes divided by a 30% lead-to-quote/)).toBeTruthy();
 	});
 
 	it("shows zero-staff note when staffCount is 0 (D-10)", () => {
 		render(<ResultsView {...defaultProps} staffCount={0} />);
-		expect(screen.getByText(/Based on your hours only/)).toBeTruthy();
+		expect(screen.getByText(/Based on your own working hours/)).toBeTruthy();
 	});
 
 	it("does not show zero-staff note when staffCount > 0", () => {
 		render(<ResultsView {...defaultProps} staffCount={2} />);
-		expect(screen.queryByText(/Based on your hours only/)).toBeNull();
+		expect(screen.queryByText(/Based on your own working hours/)).toBeNull();
 	});
 
 	it("renders Edit Your Numbers button (D-08)", () => {

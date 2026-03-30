@@ -21,6 +21,7 @@ const validFormValues: FormValues = {
 	staffCount: 2,
 	staffHourlyRate: 15,
 	staffHoursPerWeek: 40,
+	ownerHoursPerWeek: 40,
 	avgJobValue: 3000,
 	directCostPctDisplay: 35,
 };

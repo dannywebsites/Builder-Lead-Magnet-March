@@ -10,12 +10,12 @@ export function PipelineMetric({
 	explanation,
 }: PipelineMetricProps) {
 	return (
-		<div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
-			<p className="text-sm font-semibold text-gray-600">{label}</p>
-			<p className="mt-1 text-2xl font-bold text-foreground">
+		<div className="rounded-2xl border border-slate-200/60 bg-slate-50 p-6">
+			<p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{label}</p>
+			<p className="mt-2 text-3xl font-bold text-slate-900 tabular-nums">
 				{value.toLocaleString()}
 			</p>
-			<p className="mt-2 text-sm text-gray-500">{explanation}</p>
+			<p className="mt-3 text-sm text-slate-500 leading-relaxed">{explanation}</p>
 		</div>
 	);
 }

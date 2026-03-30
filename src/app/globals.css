@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	--background: #f8fafc;
+	--foreground: #0f172a;
+	--brand: #ED0D51;
+	--brand-light: rgba(237, 13, 81, 0.08);
+	--brand-hover: #d40b48;
+	--slate-50: #f8fafc;
+	--slate-100: #f1f5f9;
+	--slate-200: #e2e8f0;
+	--slate-300: #cbd5e1;
+	--slate-400: #94a3b8;
+	--slate-500: #64748b;
+	--slate-600: #475569;
+	--slate-700: #334155;
+	--slate-800: #1e293b;
+	--slate-900: #0f172a;
 }
 
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
+	--color-brand: var(--brand);
+	--color-brand-light: var(--brand-light);
+	--color-brand-hover: var(--brand-hover);
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
 }
 
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Number input spinner removal */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+/* Smooth focus transitions */
+input, select, button {
+	transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+/* Details/summary polish */
+details summary::-webkit-details-marker {
+	display: none;
+}
+details summary {
+	list-style: none;
 }

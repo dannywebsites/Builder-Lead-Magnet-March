@@ -30,6 +30,10 @@ const testOutput: CalculatorOutput = {
 	totalBillableHours: 259.8,
 	realDirectCost: 0.4025,
 	adjustedOverheads: 8756,
+	taxBufferAmount: 1000,
+	basePayroll: 5196,
+	employerBurdenAmount: 1560,
+	marginAfterMaterials: 0.5975,
 };
 
 const testAlerts: Alert[] = [

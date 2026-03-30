@@ -34,6 +34,10 @@ export const Step3Schema = z.object({
 		.number()
 		.nonnegative("Hours cannot be negative")
 		.max(168, "Maximum 168 hours per week"),
+	ownerHoursPerWeek: z
+		.number()
+		.nonnegative("Hours cannot be negative")
+		.max(168, "Maximum 168 hours per week"),
 });
 
 export const Step4Schema = z.object({

@@ -45,6 +45,10 @@ const mockOutput = {
 	totalBillableHours: 120,
 	realDirectCost: 3200,
 	adjustedOverheads: 575,
+	taxBufferAmount: 1500,
+	basePayroll: 0,
+	employerBurdenAmount: 0,
+	marginAfterMaterials: 0.54,
 };
 
 const defaultProps = {

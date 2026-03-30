@@ -5,9 +5,10 @@ import type {
 } from "@/lib/calculator/types";
 import type { Alert } from "@/lib/calculator/alerts";
 import { formatCurrency } from "@/lib/calculator/currency";
-import { OUTPUT_COPY, ZERO_STAFF_HOURLY_NOTE } from "@/lib/results/output-copy";
+import { getOutputCopy, ZERO_STAFF_HOURLY_NOTE } from "@/lib/results/output-copy";
 import { FinancialAnchorCard } from "@/components/results/FinancialAnchorCard";
 import { PipelineMetric } from "@/components/results/PipelineMetric";
+import { CalculationBreakdown } from "@/components/results/CalculationBreakdown";
 import { AlertsSection } from "@/components/results/AlertsSection";
 import { DownloadReportButton } from "@/components/results/DownloadReportButton";
 
@@ -28,58 +29,69 @@ export function ResultsView({
 	alerts,
 	onEdit,
 }: ResultsViewProps) {
+	const copy = getOutputCopy(input, output, currency);
+
 	return (
-		<div className="max-w-2xl mx-auto px-4 py-12">
+		<div className="max-w-3xl mx-auto px-4 py-12">
 			{/* Section 1: Financial Anchors */}
-			<h2 className="text-2xl font-bold text-center mb-6">
-				What Your Business Needs to Earn
-			</h2>
+			<div className="text-center mb-8">
+				<p className="text-sm font-semibold uppercase tracking-widest text-[var(--brand)] mb-2">Your Results</p>
+				<h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+					What Your Business Needs to Earn
+				</h2>
+			</div>
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 				<FinancialAnchorCard
-					label={OUTPUT_COPY.monthlyRevenueTarget.label}
+					label={copy.monthlyRevenueTarget.label}
 					value={formatCurrency(output.monthlyRevenueTarget, currency)}
-					explanation={OUTPUT_COPY.monthlyRevenueTarget.explanation}
+					explanation={copy.monthlyRevenueTarget.explanation}
 				/>
 				<FinancialAnchorCard
-					label={OUTPUT_COPY.monthlyBillings.label}
+					label={copy.monthlyBillings.label}
 					value={formatCurrency(output.monthlyBillings, currency)}
-					explanation={OUTPUT_COPY.monthlyBillings.explanation}
+					explanation={copy.monthlyBillings.explanation}
 				/>
 				<FinancialAnchorCard
-					label={OUTPUT_COPY.hourlyFloorRate.label}
+					label={copy.hourlyFloorRate.label}
 					value={formatCurrency(output.hourlyFloorRate, currency, { decimals: 2 })}
-					explanation={OUTPUT_COPY.hourlyFloorRate.explanation}
+					explanation={copy.hourlyFloorRate.explanation}
 					note={staffCount === 0 ? ZERO_STAFF_HOURLY_NOTE : undefined}
 				/>
 			</div>
 
-			{/* Section: Important Notices (between anchors and pipeline) */}
+			{/* Section 1.5: Calculation Breakdown */}
+			<CalculationBreakdown input={input} output={output} currency={currency} />
+
+			{/* Section: Important Notices */}
 			<AlertsSection alerts={alerts} />
 
 			{/* Section 2: Sales Pipeline */}
-			<h2 className="text-2xl font-bold text-center mt-12 mb-6">
-				Your Sales Marching Orders
-			</h2>
+			<div className="text-center mt-14 mb-8">
+				<p className="text-sm font-semibold uppercase tracking-widest text-[var(--brand)] mb-2">Pipeline</p>
+				<h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+					Your Sales Marching Orders
+				</h2>
+			</div>
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 				<PipelineMetric
-					label={OUTPUT_COPY.jobsToWin.label}
+					label={copy.jobsToWin.label}
 					value={output.jobsToWin}
-					explanation={OUTPUT_COPY.jobsToWin.explanation}
+					explanation={copy.jobsToWin.explanation}
 				/>
 				<PipelineMetric
-					label={OUTPUT_COPY.quotesNeeded.label}
+					label={copy.quotesNeeded.label}
 					value={output.quotesNeeded}
-					explanation={OUTPUT_COPY.quotesNeeded.explanation}
+					explanation={copy.quotesNeeded.explanation}
 				/>
 				<PipelineMetric
-					label={OUTPUT_COPY.leadsNeeded.label}
+					label={copy.leadsNeeded.label}
 					value={output.leadsNeeded}
-					explanation={OUTPUT_COPY.leadsNeeded.explanation}
+					explanation={copy.leadsNeeded.explanation}
 				/>
 			</div>
 
 			{/* Section 3: Actions */}
-			<div className="mt-10 flex flex-col items-center gap-3">
+			<div className="mt-12 flex flex-col items-center gap-3">
 				<DownloadReportButton
 					input={input}
 					output={output}
@@ -89,7 +101,7 @@ export function ResultsView({
 				<button
 					type="button"
 					onClick={onEdit}
-					className="px-6 py-3 rounded-lg text-base font-semibold min-h-[44px] text-gray-600 hover:text-foreground border border-gray-300"
+					className="px-6 py-3 rounded-xl text-base font-semibold min-h-[44px] text-slate-500 hover:text-slate-900 hover:bg-slate-100 border border-slate-300 transition-colors"
 				>
 					Edit Your Numbers
 				</button>

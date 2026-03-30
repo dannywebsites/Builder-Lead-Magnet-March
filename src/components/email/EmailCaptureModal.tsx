@@ -123,7 +123,7 @@ export function EmailCaptureModal({
 			<div
 				role="dialog"
 				aria-modal="true"
-				className="bg-white rounded-xl shadow-xl p-6 max-w-md w-full mx-4 relative"
+				className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 relative border border-slate-200/60"
 				onClick={(e) => e.stopPropagation()}
 				onKeyDown={undefined}
 			>
@@ -136,10 +136,10 @@ export function EmailCaptureModal({
 					&#x00D7;
 				</button>
 
-				<h2 className="text-xl font-bold text-gray-900 mb-2">
+				<h2 className="text-xl font-bold text-slate-900 mb-2">
 					Get Your Trade Survival Report
 				</h2>
-				<p className="text-sm text-gray-600 mb-5">
+				<p className="text-sm text-slate-500 mb-6">
 					Enter your email and we'll send you a summary plus your
 					downloadable report.
 				</p>
@@ -150,7 +150,7 @@ export function EmailCaptureModal({
 							type="email"
 							aria-label="Email address"
 							placeholder="your@email.com"
-							className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+							className="w-full px-3 py-3 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand)] focus:border-transparent"
 							{...emailRegister}
 							ref={(e) => {
 								formRef(e);
@@ -185,7 +185,7 @@ export function EmailCaptureModal({
 					<button
 						type="submit"
 						disabled={isSubmitting}
-						className="w-full px-4 py-2.5 rounded-lg text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+						className="w-full px-4 py-2.5 rounded-lg text-sm font-semibold bg-[var(--brand)] text-white hover:bg-[var(--brand-hover)] disabled:opacity-50 disabled:cursor-not-allowed shadow-sm transition-all"
 					>
 						{isSubmitting ? "Sending..." : "Send My Report"}
 					</button>
@@ -194,7 +194,7 @@ export function EmailCaptureModal({
 						<button
 							type="button"
 							onClick={handleFallbackDownload}
-							className="w-full text-sm text-blue-600 hover:underline"
+							className="w-full text-sm text-[var(--brand)] hover:underline"
 						>
 							Download Report Without Email
 						</button>
