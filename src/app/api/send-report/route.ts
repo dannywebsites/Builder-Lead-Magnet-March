@@ -21,7 +21,7 @@ export async function POST(request: Request) {
 			);
 		}
 
-		const { email, consent, calculatorInput, calculatorOutput, currency, alerts } =
+		const { name, email, consent, calculatorInput, calculatorOutput, currency, alerts } =
 			parsed.data;
 
 		// Double-check consent server-side (belt and suspenders)
@@ -34,6 +34,7 @@ export async function POST(request: Request) {
 
 		// Cast the loosely-typed schema data back to proper types for the template
 		const templateProps = {
+			name,
 			input: calculatorInput as unknown as CalculatorInput,
 			output: calculatorOutput as unknown as CalculatorOutput,
 			currency: currency as Currency,
@@ -66,8 +67,21 @@ export async function POST(request: Request) {
 			getResend().contacts.create({
 				audienceId,
 				email,
+				firstName: name,
 			}).catch((err) => {
 				console.error("Failed to add contact to audience:", err);
+			});
+		}
+
+		// Push lead data to GHL webhook (fire-and-forget)
+		const ghlWebhookUrl = process.env.GHL_WEBHOOK_URL;
+		if (ghlWebhookUrl) {
+			fetch(ghlWebhookUrl, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ name, email }),
+			}).catch((err) => {
+				console.error("Failed to push to GHL webhook:", err);
 			});
 		}
 

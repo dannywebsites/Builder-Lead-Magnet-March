@@ -19,6 +19,7 @@ import type {
 import type { Alert } from "@/lib/calculator/alerts";
 
 interface ResultsSummaryEmailProps {
+	name?: string;
 	input: CalculatorInput;
 	output: CalculatorOutput;
 	currency: Currency;
@@ -59,6 +60,7 @@ function formatValue(
 }
 
 export function ResultsSummaryEmail({
+	name,
 	output,
 	currency,
 	alerts,
@@ -74,6 +76,13 @@ export function ResultsSummaryEmail({
 					<Heading as="h1" style={styles.heading}>
 						Your Trade Survival Numbers
 					</Heading>
+
+					<Text style={styles.greeting}>
+						{name ? `Hi ${name},` : "Hi,"}
+					</Text>
+					<Text style={styles.greeting}>
+						Here are your Trade Survival Numbers — the minimum your business needs to keep you solvent.
+					</Text>
 
 					<Section>
 						{ANCHOR_KEYS.map((key) => {
@@ -143,6 +152,12 @@ const styles = {
 		fontWeight: "bold" as const,
 		textAlign: "center" as const,
 		margin: "0 0 24px",
+	},
+	greeting: {
+		color: "#333",
+		fontSize: "14px",
+		lineHeight: "1.5",
+		margin: "0 0 16px",
 	},
 	anchorBlock: {
 		marginBottom: "8px",
