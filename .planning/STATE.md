@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-03-28)
 Phase: 10
 Plan: Not started
 Status: Phase complete — ready for verification
-Last activity: 2026-03-28
+Last activity: 2026-03-30 - Completed quick task 260330-i41: Add name field to email capture modal and integrate GHL webhook
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -98,6 +98,12 @@ None yet.
 ### Blockers/Concerns
 
 None yet.
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260330-i41 | Add name field to email capture modal and integrate GHL webhook | 2026-03-30 | 3b2472d | [260330-i41-add-name-field-to-email-capture-modal-an](./quick/260330-i41-add-name-field-to-email-capture-modal-an/) |
 
 ## Session Continuity
 
