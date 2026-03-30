@@ -4,7 +4,9 @@ import { sendReportRequestSchema } from "@/lib/email/schema";
 import type { CalculatorInput, CalculatorOutput, Currency } from "@/lib/calculator/types";
 import type { Alert } from "@/lib/calculator/alerts";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+	return new Resend(process.env.RESEND_API_KEY);
+}
 
 export async function POST(request: Request) {
 	try {
@@ -39,6 +41,7 @@ export async function POST(request: Request) {
 		};
 
 		// LEAD-05: Send branded results summary email via Resend
+		const resend = getResend();
 		const { error: emailError } = await resend.emails.send({
 			from:
 				process.env.EMAIL_FROM ||
@@ -60,7 +63,7 @@ export async function POST(request: Request) {
 		// Non-blocking — don't fail the request if audience add fails
 		const audienceId = process.env.RESEND_AUDIENCE_ID;
 		if (audienceId) {
-			resend.contacts.create({
+			getResend().contacts.create({
 				audienceId,
 				email,
 			}).catch((err) => {
